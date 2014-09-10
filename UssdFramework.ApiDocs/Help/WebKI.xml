@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AppName property" Url="html/e668b326-5c28-6eb5-0a40-03f0488efc86.htm" />
+  <HelpKINode Title="AutoSetupAsync method" Url="html/248cca49-ab35-361b-f4b9-0175aa5796d4.htm" />
+  <HelpKINode Title="ClientState property">
+    <HelpKINode Title="UssdRequest.ClientState Property " Url="html/f4463973-7b79-02f5-3edf-7ce2c35e7ce4.htm" />
+    <HelpKINode Title="UssdResponse.ClientState Property " Url="html/ad62534c-86da-926d-3174-1ca5f3e41100.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContinueAsync method" Url="html/b9fdd319-6f80-ad0f-8ca5-bb3ec0bde169.htm" />
+  <HelpKINode Title="EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
+  <HelpKINode Title="ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
+  <HelpKINode Title="ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
+  <HelpKINode Title="Generate method" Url="html/207c1ea7-95f8-47ea-fe11-1378ab9e9719.htm" />
+  <HelpKINode Title="Initiation enumeration member" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+  <HelpKINode Title="Input enumeration member" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
+  <HelpKINode Title="Input method" Url="html/d8c78299-dd17-6b54-cccc-1d08c5bcfde4.htm" />
+  <HelpKINode Title="InputData field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
+  <HelpKINode Title="InputDataHash property" Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
+  <HelpKINode Title="InputMetaHash property" Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
+  <HelpKINode Title="InputProcessorAsync property" Url="html/7bba2f67-ecce-d382-bb60-1bb65c3d2d50.htm" />
+  <HelpKINode Title="Inputs property" Url="html/48b9c7d6-24b4-2543-9598-ef6dd12ae2ed.htm" />
+  <HelpKINode Title="Menu enumeration member" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
+  <HelpKINode Title="Menu method" Url="html/7fb26283-d948-429f-4765-2675421a22bc.htm" />
+  <HelpKINode Title="Message property">
+    <HelpKINode Title="UssdRequest.Message Property " Url="html/30bba018-b314-6090-83b7-ffae795ae891.htm" />
+    <HelpKINode Title="UssdResponse.Message Property " Url="html/a7ec0cac-5282-271c-b430-9dc7e2c0eab5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Mobile property">
+    <HelpKINode Title="Session.Mobile Property " Url="html/0b1e03d6-5a0b-6864-ae9c-f3b09edbb7ec.htm" />
+    <HelpKINode Title="UssdRequest.Mobile Property " Url="html/9864e954-b457-431a-2a7c-28ff894dc3a5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Name property" Url="html/e6227c00-7d56-d800-29f6-ba0b3ca6e3a6.htm" />
+  <HelpKINode Title="Notice enumeration member" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
+  <HelpKINode Title="Notice method" Url="html/37ca4e50-80e1-4093-7680-99338470c0de.htm" />
+  <HelpKINode Title="Operator property" Url="html/ab1763f7-202e-da58-2219-cfb3d1324827.htm" />
+  <HelpKINode Title="PrepareInputDataAsync method" Url="html/0e5ab051-9093-404a-ebc7-05e88a5cba77.htm" />
+  <HelpKINode Title="ReceiveInputAndRespondAsync method" Url="html/50c04126-33a6-7acf-01ef-ab96e7c93c76.htm" />
+  <HelpKINode Title="ReceiveInputAsync method" Url="html/d6baa4ff-6426-773d-3874-46f1384ca2c1.htm" />
+  <HelpKINode Title="Redis field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
+  <HelpKINode Title="Redis property" Url="html/0542c85b-b87b-e537-dc2d-2b4c8aae5cf8.htm" />
+  <HelpKINode Title="Release enumeration member">
+    <HelpKINode Title="UssdRequestTypes Enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+    <HelpKINode Title="UssdResponseTypes Enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Release method" Url="html/43723263-c8aa-5907-8c26-60dbf6c52fa1.htm" />
+  <HelpKINode Title="RespondAsync method" Url="html/6c8e595e-f930-df88-dae3-0ded4b1ff838.htm" />
+  <HelpKINode Title="RespondAsync property" Url="html/0ffd2581-266a-76e6-c7ab-62b130c904ea.htm" />
+  <HelpKINode Title="Response enumeration member">
+    <HelpKINode Title="UssdRequestTypes Enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+    <HelpKINode Title="UssdResponseTypes Enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Response method" Url="html/d652eb63-c82f-5d62-8feb-58bafd3cc544.htm" />
+  <HelpKINode Title="ResumeAsync method" Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
+  <HelpKINode Title="Screen property" Url="html/79765c82-406d-d638-992d-ab8d5b9bbbc8.htm" />
+  <HelpKINode Title="Sequence property" Url="html/24f7112a-972c-4015-d77a-4ae60f65be18.htm" />
+  <HelpKINode Title="ServiceCode property" Url="html/d226d0c9-d814-7e90-a40d-b2da2dc905a1.htm" />
+  <HelpKINode Title="Session class">
+    <HelpKINode Title="Session Class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
+    <HelpKINode Title="about Session class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
+    <HelpKINode Title="constructor" Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
+    <HelpKINode Title="fields" Url="html/9fd7bd47-f497-8abd-72ff-486786c632ad.htm" />
+    <HelpKINode Title="methods" Url="html/5bdedde2-2d45-c80f-65af-4a49359b6499.htm" />
+    <HelpKINode Title="properties" Url="html/36721b82-bd3b-bbfd-b637-e319f3fa5885.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Session.AppName property" Url="html/e668b326-5c28-6eb5-0a40-03f0488efc86.htm" />
+  <HelpKINode Title="Session.AutoSetupAsync method" Url="html/248cca49-ab35-361b-f4b9-0175aa5796d4.htm" />
+  <HelpKINode Title="Session.ContinueAsync method" Url="html/b9fdd319-6f80-ad0f-8ca5-bb3ec0bde169.htm" />
+  <HelpKINode Title="Session.EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
+  <HelpKINode Title="Session.ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
+  <HelpKINode Title="Session.ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
+  <HelpKINode Title="Session.InputDataHash property" Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
+  <HelpKINode Title="Session.InputMetaHash property" Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
+  <HelpKINode Title="Session.Mobile property" Url="html/0b1e03d6-5a0b-6864-ae9c-f3b09edbb7ec.htm" />
+  <HelpKINode Title="Session.Redis field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
+  <HelpKINode Title="Session.RespondAsync method" Url="html/6c8e595e-f930-df88-dae3-0ded4b1ff838.htm" />
+  <HelpKINode Title="Session.ResumeAsync method" Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
+  <HelpKINode Title="Session.Screen property" Url="html/79765c82-406d-d638-992d-ab8d5b9bbbc8.htm" />
+  <HelpKINode Title="Session.Session constructor" Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
+  <HelpKINode Title="Session.StartAsync method" Url="html/e5625f9c-818c-a4ce-fe2f-9aaff38a7f4f.htm" />
+  <HelpKINode Title="Session.State property" Url="html/4b953863-26cf-1968-f882-62e7ff99d5f5.htm" />
+  <HelpKINode Title="Session.TimeoutAsync method" Url="html/4a4d58b4-0995-94c6-b86a-cce1198061bf.htm" />
+  <HelpKINode Title="Session.UssdRequest property" Url="html/a9e5ab73-8f8d-f3aa-b933-ee0ed584f0ea.htm" />
+  <HelpKINode Title="Session.UssdScreens property" Url="html/998dfd83-d7ff-f825-275e-d9f8d06d4ac4.htm" />
+  <HelpKINode Title="SessionId property" Url="html/0e10e240-8794-eef6-7ce4-05c68e67ba42.htm" />
+  <HelpKINode Title="Setup class">
+    <HelpKINode Title="Setup Class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm" />
+    <HelpKINode Title="about Setup class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm" />
+    <HelpKINode Title="constructor" Url="html/0baeaadf-6ac8-6873-4a51-1433fa2c3617.htm" />
+    <HelpKINode Title="methods" Url="html/4452183f-3ce3-99b3-aab7-9d760dd54739.htm" />
+    <HelpKINode Title="properties" Url="html/b569b0c7-c216-6481-078b-73578fb95dad.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Setup.Name property" Url="html/e6227c00-7d56-d800-29f6-ba0b3ca6e3a6.htm" />
+  <HelpKINode Title="Setup.Redis property" Url="html/0542c85b-b87b-e537-dc2d-2b4c8aae5cf8.htm" />
+  <HelpKINode Title="Setup.Setup constructor" Url="html/0baeaadf-6ac8-6873-4a51-1433fa2c3617.htm" />
+  <HelpKINode Title="Setup.UssdScreens property" Url="html/ed20467e-653b-0a76-3990-b0120b5d9218.htm" />
+  <HelpKINode Title="StartAsync method" Url="html/e5625f9c-818c-a4ce-fe2f-9aaff38a7f4f.htm" />
+  <HelpKINode Title="State property" Url="html/4b953863-26cf-1968-f882-62e7ff99d5f5.htm" />
+  <HelpKINode Title="Timeout enumeration member" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+  <HelpKINode Title="TimeoutAsync method" Url="html/4a4d58b4-0995-94c6-b86a-cce1198061bf.htm" />
+  <HelpKINode Title="Title property" Url="html/6ef60037-4244-af2b-f5b3-420e2cf8c385.htm" />
+  <HelpKINode Title="Type property">
+    <HelpKINode Title="UssdRequest.Type Property " Url="html/51ed25ed-5feb-1293-1c46-8f141f1b4e5f.htm" />
+    <HelpKINode Title="UssdResponse.Type Property " Url="html/0b7dcc57-34c9-4dd7-8772-ba6c9f6d59a2.htm" />
+    <HelpKINode Title="UssdScreen.Type Property " Url="html/80fb7202-32f0-988c-83bf-63639610f80c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UssdFramework namespace" Url="html/fbb4ec97-f236-796b-25a3-0b4cb0b9000f.htm" />
+  <HelpKINode Title="UssdFramework.Session class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
+  <HelpKINode Title="UssdFramework.Setup class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm" />
+  <HelpKINode Title="UssdFramework.UssdRequest class" Url="html/9df8da64-1002-a4ed-4deb-72423af2e02b.htm" />
+  <HelpKINode Title="UssdFramework.UssdRequestTypes enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+  <HelpKINode Title="UssdFramework.UssdResponse class" Url="html/9837461b-48a4-a81a-e7e0-fc96041f7142.htm" />
+  <HelpKINode Title="UssdFramework.UssdResponseTypes enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
+  <HelpKINode Title="UssdFramework.UssdScreen class" Url="html/f461e33c-c7bf-faa0-19d0-474094a1cf12.htm" />
+  <HelpKINode Title="UssdFramework.UssdScreen.InputProcessorAsyncDelegate delegate" Url="html/37927bfe-f40b-48e3-009c-f6a3e5815c63.htm" />
+  <HelpKINode Title="UssdFramework.UssdScreen.RespondAsyncDelegate delegate" Url="html/c282fd7f-14b5-e18a-ecf7-43fe5098c8eb.htm" />
+  <HelpKINode Title="UssdFramework.UssdScreenTypes enumeration" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
+  <HelpKINode Title="UssdRequest class">
+    <HelpKINode Title="UssdRequest Class" Url="html/9df8da64-1002-a4ed-4deb-72423af2e02b.htm" />
+    <HelpKINode Title="about UssdRequest class" Url="html/9df8da64-1002-a4ed-4deb-72423af2e02b.htm" />
+    <HelpKINode Title="constructor" Url="html/c7db9446-3402-e561-0817-8fa80acc9ef7.htm" />
+    <HelpKINode Title="methods" Url="html/978044e1-75d1-e757-b98d-d4c0ec41d1e0.htm" />
+    <HelpKINode Title="properties" Url="html/a1259898-72e9-0a58-a6fb-d0a20e0f710f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UssdRequest property" Url="html/a9e5ab73-8f8d-f3aa-b933-ee0ed584f0ea.htm" />
+  <HelpKINode Title="UssdRequest.ClientState property" Url="html/f4463973-7b79-02f5-3edf-7ce2c35e7ce4.htm" />
+  <HelpKINode Title="UssdRequest.Message property" Url="html/30bba018-b314-6090-83b7-ffae795ae891.htm" />
+  <HelpKINode Title="UssdRequest.Mobile property" Url="html/9864e954-b457-431a-2a7c-28ff894dc3a5.htm" />
+  <HelpKINode Title="UssdRequest.Operator property" Url="html/ab1763f7-202e-da58-2219-cfb3d1324827.htm" />
+  <HelpKINode Title="UssdRequest.Sequence property" Url="html/24f7112a-972c-4015-d77a-4ae60f65be18.htm" />
+  <HelpKINode Title="UssdRequest.ServiceCode property" Url="html/d226d0c9-d814-7e90-a40d-b2da2dc905a1.htm" />
+  <HelpKINode Title="UssdRequest.SessionId property" Url="html/0e10e240-8794-eef6-7ce4-05c68e67ba42.htm" />
+  <HelpKINode Title="UssdRequest.Type property" Url="html/51ed25ed-5feb-1293-1c46-8f141f1b4e5f.htm" />
+  <HelpKINode Title="UssdRequest.UssdRequest constructor" Url="html/c7db9446-3402-e561-0817-8fa80acc9ef7.htm" />
+  <HelpKINode Title="UssdRequestTypes enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
+  <HelpKINode Title="UssdResponse class">
+    <HelpKINode Title="UssdResponse Class" Url="html/9837461b-48a4-a81a-e7e0-fc96041f7142.htm" />
+    <HelpKINode Title="about UssdResponse class" Url="html/9837461b-48a4-a81a-e7e0-fc96041f7142.htm" />
+    <HelpKINode Title="constructor" Url="html/934b0d93-d07d-d7b2-c769-8ba16d9d2f44.htm" />
+    <HelpKINode Title="methods" Url="html/fe523184-a531-4abd-e18f-d1f5e4d604eb.htm" />
+    <HelpKINode Title="properties" Url="html/1e43c250-504e-3432-2213-c2ef644eccd9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UssdResponse.ClientState property" Url="html/ad62534c-86da-926d-3174-1ca5f3e41100.htm" />
+  <HelpKINode Title="UssdResponse.Generate method" Url="html/207c1ea7-95f8-47ea-fe11-1378ab9e9719.htm" />
+  <HelpKINode Title="UssdResponse.Input method" Url="html/d8c78299-dd17-6b54-cccc-1d08c5bcfde4.htm" />
+  <HelpKINode Title="UssdResponse.Menu method" Url="html/7fb26283-d948-429f-4765-2675421a22bc.htm" />
+  <HelpKINode Title="UssdResponse.Message property" Url="html/a7ec0cac-5282-271c-b430-9dc7e2c0eab5.htm" />
+  <HelpKINode Title="UssdResponse.Notice method" Url="html/37ca4e50-80e1-4093-7680-99338470c0de.htm" />
+  <HelpKINode Title="UssdResponse.Release method" Url="html/43723263-c8aa-5907-8c26-60dbf6c52fa1.htm" />
+  <HelpKINode Title="UssdResponse.Response method" Url="html/d652eb63-c82f-5d62-8feb-58bafd3cc544.htm" />
+  <HelpKINode Title="UssdResponse.Type property" Url="html/0b7dcc57-34c9-4dd7-8772-ba6c9f6d59a2.htm" />
+  <HelpKINode Title="UssdResponse.UssdResponse constructor" Url="html/934b0d93-d07d-d7b2-c769-8ba16d9d2f44.htm" />
+  <HelpKINode Title="UssdResponseTypes enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
+  <HelpKINode Title="UssdScreen class">
+    <HelpKINode Title="UssdScreen Class" Url="html/f461e33c-c7bf-faa0-19d0-474094a1cf12.htm" />
+    <HelpKINode Title="about UssdScreen class" Url="html/f461e33c-c7bf-faa0-19d0-474094a1cf12.htm" />
+    <HelpKINode Title="constructor" Url="html/a7c2bf2d-0e82-7b2d-091c-d6acb1e638cb.htm" />
+    <HelpKINode Title="fields" Url="html/08c3d2ac-a1d1-d0aa-ad47-c00b1fa5ffd3.htm" />
+    <HelpKINode Title="methods" Url="html/150aa440-f372-f1fd-aa3e-c82594655c1d.htm" />
+    <HelpKINode Title="properties" Url="html/c13c7034-bd41-0334-9cc8-71a3d6a9634c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UssdScreen.InputData field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
+  <HelpKINode Title="UssdScreen.InputProcessorAsync property" Url="html/7bba2f67-ecce-d382-bb60-1bb65c3d2d50.htm" />
+  <HelpKINode Title="UssdScreen.InputProcessorAsyncDelegate delegate" Url="html/37927bfe-f40b-48e3-009c-f6a3e5815c63.htm" />
+  <HelpKINode Title="UssdScreen.Inputs property" Url="html/48b9c7d6-24b4-2543-9598-ef6dd12ae2ed.htm" />
+  <HelpKINode Title="UssdScreen.PrepareInputDataAsync method" Url="html/0e5ab051-9093-404a-ebc7-05e88a5cba77.htm" />
+  <HelpKINode Title="UssdScreen.ReceiveInputAndRespondAsync method" Url="html/50c04126-33a6-7acf-01ef-ab96e7c93c76.htm" />
+  <HelpKINode Title="UssdScreen.ReceiveInputAsync method" Url="html/d6baa4ff-6426-773d-3874-46f1384ca2c1.htm" />
+  <HelpKINode Title="UssdScreen.RespondAsync property" Url="html/0ffd2581-266a-76e6-c7ab-62b130c904ea.htm" />
+  <HelpKINode Title="UssdScreen.RespondAsyncDelegate delegate" Url="html/c282fd7f-14b5-e18a-ecf7-43fe5098c8eb.htm" />
+  <HelpKINode Title="UssdScreen.Title property" Url="html/6ef60037-4244-af2b-f5b3-420e2cf8c385.htm" />
+  <HelpKINode Title="UssdScreen.Type property" Url="html/80fb7202-32f0-988c-83bf-63639610f80c.htm" />
+  <HelpKINode Title="UssdScreen.UssdScreen constructor" Url="html/a7c2bf2d-0e82-7b2d-091c-d6acb1e638cb.htm" />
+  <HelpKINode Title="UssdScreens property">
+    <HelpKINode Title="Session.UssdScreens Property " Url="html/998dfd83-d7ff-f825-275e-d9f8d06d4ac4.htm" />
+    <HelpKINode Title="Setup.UssdScreens Property " Url="html/ed20467e-653b-0a76-3990-b0120b5d9218.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UssdScreenTypes enumeration" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
+</HelpKI>

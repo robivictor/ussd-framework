@@ -1,6 +1,6 @@
 # USSD Framework
 
-A .NET framework to ease building USSD clients on the SMSGH platform.
+A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.com) [USSD platform](http://developers.smsgh.com/documentations/ussd).
 
 ## Features
 
@@ -8,10 +8,11 @@ A .NET framework to ease building USSD clients on the SMSGH platform.
 * Automated USSD screen management.
 * Automagically resume timed out USSD sessions.
 * Automagically collect user input for specific actions.
+* Fully asynchronous.
 
 ## Dependencies
 
-* [Redis](http://redis.io/download)
+* [Redis](http://redis.io/download).
 
 ## Demo
 
@@ -54,3 +55,9 @@ So chosing `1` will take us to another screen with an address of `1.1` which is 
 Screen flow diagram:
 
 <img src="docs/img/demo/flow.jpg">
+
+
+## Documentation
+
+* __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md).
+* __API__

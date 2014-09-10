@@ -11,16 +11,35 @@ namespace UssdFramework
     /// </summary>
     public class UssdScreen
     {
+        /// <summary>
+        /// Title of screen. Screens of Type "Input" will have this displayed  before
+        /// the input parameter's name.
+        /// </summary>
         public string Title { get; set; }
+        /// <summary>
+        /// Screen type. "Menu", "Input" or "Notice".
+        /// </summary>
         public UssdScreenTypes Type { get; set; }
+        /// <summary>
+        /// List of input parameter names for this screen.
+        /// </summary>
         public List<string> Inputs { get; set; }
+        /// <summary>
+        /// Populated when all inputs have been collected and sent to InputProcessorAsync delegate method.
+        /// </summary>
         public Dictionary<string,string> InputData = new Dictionary<string, string>();
+        /// <summary>
+        /// Screen response delegate method.
+        /// </summary>
         public RespondAsyncDelegate RespondAsync { get; set; }
+        /// <summary>
+        /// Input processor delegate method.
+        /// </summary>
         public InputProcessorAsyncDelegate InputProcessorAsync { get; set; }
 
         public delegate Task<UssdResponse> RespondAsyncDelegate(Session session);
 
-        public delegate Task<UssdResponse> InputProcessorAsyncDelegate(Dictionary<string, string> data);
+        public delegate Task<UssdResponse> InputProcessorAsyncDelegate(Session session, Dictionary<string, string> data);
 
         /// <summary>
         /// Prepare input data to be passed to <see cref="InputProcessorAsync"/>.

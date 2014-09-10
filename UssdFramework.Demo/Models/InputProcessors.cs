@@ -8,7 +8,7 @@ namespace UssdFramework.Demo.Models
 {
     public class InputProcessors
     {
-        public static async Task<UssdResponse> CustomGreeting(Dictionary<string, string> data)
+        public static async Task<UssdResponse> CustomGreeting(Session session, Dictionary<string, string> data)
         {
             return UssdResponse.Generate(UssdResponseTypes.Release
                 , String.Format("Hello {0} {1}!", data["First Name"], data["Last Name"]));

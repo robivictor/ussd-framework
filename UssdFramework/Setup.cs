@@ -8,20 +8,29 @@ using StackExchange.Redis;
 namespace UssdFramework
 {
     /// <summary>
-    /// Settings used to initialize a session appropriately.
+    /// Setup a session.
     /// </summary>
     public class Setup
     {
+        /// <summary>
+        /// Application name.
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// StackExchange.Redis instance.
+        /// </summary>
         public IDatabase Redis { get; set; }
+        /// <summary>
+        /// Dictionary containing USSD screens.
+        /// </summary>
         public Dictionary<string, UssdScreen> UssdScreens { get; set; }
 
         /// <summary>
-        /// Settings initializer
+        /// Setup initializer
         /// </summary>
         /// <param name="name">App name</param>
-        /// <param name="redisAddress">Address of Redis store. Uses StackExchange.Redis.</param>
-        /// <param name="screens">A dictionary of <see cref="UssdScreens"/></param>
+        /// <param name="redisAddress">Address of Redis store. Uses StackExchange.Redis underneath.</param>
+        /// <param name="screens">A dictionary containing <param name="screens"></param></param>
         public Setup(string name, string redisAddress, Dictionary<string, UssdScreen> screens)
         {
             Name = name;

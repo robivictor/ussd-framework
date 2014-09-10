@@ -12,10 +12,19 @@ namespace UssdFramework
     /// </summary>
     public class UssdResponse
     {
+        /// <summary>
+        /// Type of USSD response. Can be "Response" or "Release".
+        /// </summary>
         [Required]
         public string Type { get; set; }
+        /// <summary>
+        /// Message to send back in response.
+        /// </summary>
         [Required]
         public string Message { get; set; }
+        /// <summary>
+        /// A value to be sent back to client on subsequent request.
+        /// </summary>
         public string ClientState { get; set; }
 
         /// <summary>

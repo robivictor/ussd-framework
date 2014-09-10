@@ -13,19 +13,45 @@ namespace UssdFramework
     /// </summary>
     public class Session
     {
+        /// <summary>
+        /// Application name.
+        /// </summary>
         public string AppName { get; set; }
+        /// <summary>
+        /// Mobile number from which USSD request originated.
+        /// </summary>
         public string Mobile { get; set; }
+        /// <summary>
+        /// Screen address.
+        /// </summary>
         public string Screen { get; set; }
+        /// <summary>
+        /// Session state.
+        /// </summary>
         public UssdRequestTypes State { get; set; }
+        /// <summary>
+        /// Current USSD request.
+        /// </summary>
         public UssdRequest UssdRequest { get; set; }
+        /// <summary>
+        /// Dictionary of USSD Screens
+        /// </summary>
         public Dictionary<string, UssdScreen> UssdScreens { get; set; }
+        /// <summary>
+        /// Key used to store Input Meta data in Redis.
+        /// </summary>
         public string InputMetaHash { get { return Mobile + PostfixInputMeta; } }
+        /// <summary>
+        /// Key used to store Input Data in Redis.
+        /// </summary>
         public string InputDataHash { get { return Mobile + PostfixInputData; } }
+        /// <summary>
+        /// StackExchange.Redis instance.
+        /// </summary>
+        public readonly IDatabase Redis;
 
         private const string PostfixInputData = "_InputData";
         private const string PostfixInputMeta = "_InputMeta";
-
-        public readonly IDatabase Redis;
 
         /// <summary>
         /// Initializes a new session.
@@ -228,7 +254,7 @@ namespace UssdFramework
                             }
                             await screen.ReceiveInputAsync(this, position);
                             await screen.PrepareInputDataAsync(this);
-                            return await screen.InputProcessorAsync(screen.InputData);
+                            return await screen.InputProcessorAsync(this, screen.InputData);
                     }
                     return await screen.RespondAsync(this);
                 default:
