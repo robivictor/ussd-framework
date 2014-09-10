@@ -138,3 +138,48 @@ There are 2 other properties that need to be set when the screen is of type `Uss
 ## Setup the controller
 
 Now to start receiving requests we just have to setup a controller action.
+
+```c#
+using System.Threading.Tasks;
+using System.Web.Http;
+using UssdDemo.Models;
+using UssdFramework;
+
+namespace UssdDemo.Controllers
+{
+    public class DefaultController : ApiController
+    {
+        private readonly Setup _setup = new Setup("DemoApp", "localhost", Screens.All);
+
+        [HttpPost]
+        public async Task<IHttpActionResult> Index(UssdRequest ussdRequest)
+        {
+            var session = new Session(_setup, ussdRequest);
+            switch (ussdRequest.Type)
+            {
+                case "Initiation":
+                    var exists = await session.ExistsAndTimedOutAsync();
+                    if (exists) await session.ResumeAsync();
+                    else await session.StartAsync("1");
+                    break;
+                case "Response":
+                    await session.ContinueAsync();
+                    break;
+                case "Release":
+                    await session.EndAsync();
+                    break;
+                case "Timeout":
+                    await session.TimeoutAsync();
+                    break;
+                default:
+                    return Ok(UssdResponse.Generate(UssdResponseTypes.Release
+                        , "Failed to setup session. Check the Type parameter of USSD request."));
+            }
+            return Ok(await session.RespondAsync());
+        }  
+    }
+}
+```
+
+We create a private instance of `UssdFramework.Setup` that we pass to `UssdFramework.Session` along with the `UssdRequest` object.
+
