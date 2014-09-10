@@ -30,8 +30,8 @@ namespace UssdFramework
         /// <summary>
         /// Initializes a new session.
         /// </summary>
-        /// <param name="setup"></param>
-        /// <param name="request"></param>
+        /// <param name="setup">Setup</param>
+        /// <param name="request">USSD request</param>
         public Session(Setup setup, UssdRequest request)
         {
             AppName = setup.Name;
@@ -45,8 +45,8 @@ namespace UssdFramework
         /// Automatically setup a session based on 
         /// <param name="initialScreenAddress">initial screen address</param>.
         /// </summary>
-        /// <param name="initialScreenAddress"></param>
-        /// <returns></returns>
+        /// <param name="initialScreenAddress">Initial Screen address</param>
+        /// <returns>USSD response.</returns>
         public async Task<UssdResponse> AutoSetupAsync(string initialScreenAddress)
         {
             switch (UssdRequest.Type)
@@ -75,7 +75,7 @@ namespace UssdFramework
         /// <summary>
         /// Automatically setup a session by setting initial screen address to "1".
         /// </summary>
-        /// <returns></returns>
+        /// <returns>USSD response</returns>
         public async Task<UssdResponse> AutoSetupAsync()
         {
             return await AutoSetupAsync("1");
@@ -84,7 +84,7 @@ namespace UssdFramework
         /// <summary>
         /// Check if current request has an existing session.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Boolean</returns>
         public async Task<bool> ExistsAsync()
         {
             return await Redis.KeyExistsAsync(UssdRequest.Mobile);
@@ -93,7 +93,7 @@ namespace UssdFramework
         /// <summary>
         /// Check if current request has an existing session that timed out previously.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Boolean</returns>
         public async Task<bool> ExistsAndTimedOutAsync()
         {
             var exists = await this.ExistsAsync();
@@ -107,8 +107,7 @@ namespace UssdFramework
         /// <summary>
         /// Start a new USSD session.
         /// </summary>
-        /// <param name="screen"></param>
-        /// <returns></returns>
+        /// <param name="screen">Screen address</param>
         public async Task StartAsync(string screen)
         {
             await Redis.KeyDeleteAsync(Mobile);
@@ -125,7 +124,6 @@ namespace UssdFramework
         /// <summary>
         /// Resume a previously timed out session.
         /// </summary>
-        /// <returns></returns>
         public async Task ResumeAsync()
         {
             await Redis.KeyDeleteAsync(InputDataHash);
@@ -139,7 +137,6 @@ namespace UssdFramework
         /// <summary>
         /// Continue an existing session.
         /// </summary>
-        /// <returns></returns>
         public async Task ContinueAsync()
         {
             await ResetExpiryAsync();
@@ -150,7 +147,6 @@ namespace UssdFramework
         /// <summary>
         /// End a session.
         /// </summary>
-        /// <returns></returns>
         public async Task EndAsync()
         {
             await Redis.KeyDeleteAsync(Mobile);
@@ -162,7 +158,6 @@ namespace UssdFramework
         /// <summary>
         /// Timeout the session.
         /// </summary>
-        /// <returns></returns>
         public async Task TimeoutAsync()
         {
             await Redis.KeyDeleteAsync(InputMetaHash);
@@ -177,7 +172,7 @@ namespace UssdFramework
         /// <summary>
         /// Send appropriate response for USSD session.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>USSD response</returns>
         public async Task<UssdResponse> RespondAsync()
         {
             UssdScreen screen;
@@ -245,7 +240,6 @@ namespace UssdFramework
         /// <summary>
         /// Reset the session's expiry.
         /// </summary>
-        /// <returns></returns>
         private async Task ResetExpiryAsync()
         {
             await Redis.KeyExpireAsync(Mobile, TimeSpan.FromSeconds(120));
@@ -254,7 +248,6 @@ namespace UssdFramework
         /// <summary>
         /// Reset an input process' expiry.
         /// </summary>
-        /// <returns></returns>
         private async Task ResetInputExpiryAsync()
         {
             await Redis.KeyExpireAsync(InputMetaHash, TimeSpan.FromSeconds(90));
@@ -265,7 +258,6 @@ namespace UssdFramework
         /// Reset input process.
         /// </summary>
         /// <param name="screen"></param>
-        /// <returns></returns>
         private async Task ResetInputAsync(UssdScreen screen)
         {
             await Redis.HashSetAsync(InputMetaHash, "Screen"
