@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace UssdFramework
 {
+    /// <summary>
+    /// Incoming USSD request model.
+    /// </summary>
     public class UssdRequest
     {
         [Required]

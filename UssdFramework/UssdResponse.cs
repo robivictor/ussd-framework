@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace UssdFramework
 {
+    /// <summary>
+    /// USSD response model.
+    /// </summary>
     public class UssdResponse
     {
         [Required]
@@ -15,6 +18,12 @@ namespace UssdFramework
         public string Message { get; set; }
         public string ClientState { get; set; }
 
+        /// <summary>
+        /// Generate an appropriate USSD response.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static UssdResponse Generate(UssdResponseTypes type, string message)
         {
             return new UssdResponse()

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace UssdFramework
 {
+    /// <summary>
+    /// USSD screen model.
+    /// </summary>
     public class UssdScreen
     {
         public string Title { get; set; }
@@ -19,6 +22,11 @@ namespace UssdFramework
 
         public delegate Task<UssdResponse> InputProcessorAsyncDelegate(Dictionary<string, string> data);
 
+        /// <summary>
+        /// Prepare input data to be passed to <see cref="InputProcessorAsync"/>.
+        /// </summary>
+        /// <param name="session"></param>
+        /// <returns></returns>
         public async Task PrepareInputDataAsync(Session session)
         {
             foreach (var input in Inputs)
@@ -28,6 +36,12 @@ namespace UssdFramework
             }
         }
 
+        /// <summary>
+        /// Receive user input.
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public async Task ReceiveInputAsync(Session session, int position)
         {
             await session.Redis.HashSetAsync(session.InputDataHash, Inputs[position]
@@ -35,6 +49,12 @@ namespace UssdFramework
             await session.Redis.HashSetAsync(session.InputMetaHash, "Position", ++position);
         } 
 
+        /// <summary>
+        /// Receive user input and send a <see cref="UssdResponse"/>.
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public async Task<UssdResponse> ReceiveInputAndRespondAsync(Session session, int position)
         {
             await ReceiveInputAsync(session, position);
