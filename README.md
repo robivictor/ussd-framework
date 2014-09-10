@@ -12,7 +12,15 @@ A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.c
 
 ## Dependencies
 
-* [Redis](http://redis.io/download).
+* [Redis](http://redis.io/download)
+
+## Installation
+
+Install from [NuGet](http://nuget.org) via Package Manager Console.
+
+```
+PM> Install-Package UssdFramework
+```
 
 ## Demo
 
