@@ -68,4 +68,4 @@ Screen flow diagram:
 ## Documentation
 
 * __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md).
-* __API__: Open `UssdFramework.ApiDocs\Help\index.html` in a browser to view API documentation. Documentation is generated using [Sandcastle]().
+* __API__: Open `UssdFramework.ApiDocs\Help\index.html` in a browser to view API documentation. Documentation is generated using [Sandcastle](http://shfb.codeplex.com).
