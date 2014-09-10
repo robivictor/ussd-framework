@@ -30,13 +30,13 @@ namespace UssdFramework
         /// <summary>
         /// Initializes a new session.
         /// </summary>
-        /// <param name="settings"></param>
+        /// <param name="setup"></param>
         /// <param name="request"></param>
-        public Session(Settings settings, UssdRequest request)
+        public Session(Setup setup, UssdRequest request)
         {
-            AppName = settings.Name;
-            Redis = settings.Redis;
-            UssdScreens = settings.UssdScreens;
+            AppName = setup.Name;
+            Redis = setup.Redis;
+            UssdScreens = setup.UssdScreens;
             Mobile = request.Mobile;
             UssdRequest = request;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Web;
+using UssdFramework.Demo.Models.ScreenResponses;
 
 namespace UssdFramework.Demo.Models
 {
@@ -16,21 +17,21 @@ namespace UssdFramework.Demo.Models
             {
                 Title = "Main menu",
                 Type = UssdScreenTypes.Menu,
-                RespondAsync = ScreenResponses.MainMenu,
+                RespondAsync = Menus.MainMenu,
             });
 
             All.Add("1.1",  new UssdScreen()
             {
                 Title = "Simple Greeting",
                 Type = UssdScreenTypes.Notice,
-                RespondAsync = ScreenResponses.SimpleGreeting,
+                RespondAsync = Notices.SimpleGreeting,
             });
 
             All.Add("1.2", new UssdScreen()
             {
                 Title = "Enter your name",
                 Type = UssdScreenTypes.Input,
-                RespondAsync = ScreenResponses.CustomGreeting,
+                RespondAsync = Inputs.CustomGreeting,
                 Inputs = new List<string>()
                 {
                     "First Name",
@@ -43,7 +44,7 @@ namespace UssdFramework.Demo.Models
             {
                 Title = "Another menu",
                 Type = UssdScreenTypes.Menu,
-                RespondAsync = ScreenResponses.AnotherMenu
+                RespondAsync = Menus.AnotherMenu
             });
         }
     }

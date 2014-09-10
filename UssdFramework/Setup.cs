@@ -10,7 +10,7 @@ namespace UssdFramework
     /// <summary>
     /// Settings used to initialize a session appropriately.
     /// </summary>
-    public class Settings
+    public class Setup
     {
         public string Name { get; set; }
         public IDatabase Redis { get; set; }
@@ -22,7 +22,7 @@ namespace UssdFramework
         /// <param name="name">App name</param>
         /// <param name="redisAddress">Address of Redis store. Uses StackExchange.Redis.</param>
         /// <param name="screens">A dictionary of <see cref="UssdScreens"/></param>
-        public Settings(string name, string redisAddress, Dictionary<string, UssdScreen> screens)
+        public Setup(string name, string redisAddress, Dictionary<string, UssdScreen> screens)
         {
             Name = name;
             Redis = ConnectionMultiplexer.Connect(redisAddress).GetDatabase();

@@ -11,12 +11,12 @@ namespace UssdFramework.Demo.Controllers
 {
     public class DefaultController : ApiController
     {
-        private readonly Settings _settings = new Settings("DemoApp", "localhost", Screens.All);
+        private readonly Setup _setup = new Setup("DemoApp", "localhost", Screens.All);
 
         [HttpPost]
         public async Task<IHttpActionResult> Index(UssdRequest ussdRequest)
         {
-            var session = new Session(_settings, ussdRequest);
+            var session = new Session(_setup, ussdRequest);
             return Ok(await session.AutoSetupAsync());
         }  
     }
