@@ -12,7 +12,7 @@ A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.c
 
 ## Dependencies
 
-* [Redis](http://redis.io/download)
+* [Redis](https://github.com/MSOpenTech/redis)
 
 ## Installation
 
@@ -67,5 +67,5 @@ Screen flow diagram:
 
 ## Documentation
 
-* __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md).
+* __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md). __Note__: Incomplete.
 * __API__: Open `UssdFramework.ApiDocs\Help\index.html` in a browser to view API documentation. Documentation is generated using [Sandcastle](http://shfb.codeplex.com).

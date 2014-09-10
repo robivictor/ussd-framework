@@ -1,4 +1,4 @@
-# USSD Framework Tutorial
+# USSD Framework Tutorial (Note: Incomplete)
 
 This is a step-by-step walkthrough to create a basic USSD client. The tutorial uses Visual Studio 2013 on .NET Framework 4.5.
 
@@ -182,6 +182,3 @@ namespace UssdDemo.Controllers
 ```
 
 We create a private instance of `UssdFramework.Setup` that we pass to `UssdFramework.Session` along with the `UssdRequest` object.
-
-<br>
-<h1>Note: Incomplete</h1>
