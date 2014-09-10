@@ -117,10 +117,10 @@ namespace UssdFramework
 
         public async Task TimeoutAsync()
         {
+            await Redis.KeyDeleteAsync(InputMetaHash);
+            await Redis.KeyDeleteAsync(InputDataHash);
             await Redis.HashSetAsync(Mobile, "Status", "Timeout");
             await ResetExpiryAsync();
-            await Redis.KeyDeleteAsync(InputDataHash);
-            await Redis.KeyDeleteAsync(InputMetaHash);
             State = UssdRequestTypes.Timeout;
         }
 
@@ -129,6 +129,7 @@ namespace UssdFramework
         public async Task<UssdResponse> RespondAsync()
         {
             UssdScreen screen;
+            const string noScreenMessage = "Failed to get appropriate response. Please try again.";
             switch (State)
             {
                 case UssdRequestTypes.Release:
@@ -140,13 +141,13 @@ namespace UssdFramework
                 case UssdRequestTypes.Initiation:
                     if (!UssdScreens.ContainsKey(Screen))
                         return UssdResponse.Generate(UssdResponseTypes.Release
-                            , "Failed to get appropiate response. Please try later.");
+                            , noScreenMessage);
                     screen = UssdScreens[Screen];
                     return await screen.RespondAsync(this);
                 case UssdRequestTypes.Response:
                     if (!UssdScreens.ContainsKey(Screen))
                         return UssdResponse.Generate(UssdResponseTypes.Release
-                            , "Failed to get appropiate response. Please try later.");
+                            , noScreenMessage);
                     screen = UssdScreens[Screen];
                     switch (screen.Type)
                     {
@@ -160,7 +161,7 @@ namespace UssdFramework
                             var screenAddress = string.Join(".", screenList);
                             if (!UssdScreens.ContainsKey(screenAddress))
                                 return UssdResponse.Generate(UssdResponseTypes.Release
-                                    , "Failed to get appropriate response. Check input and again.");
+                                    , noScreenMessage);
                             screen = UssdScreens[screenAddress];
                             await Redis.HashSetAsync(Mobile, "Screen", screenAddress);
                             Screen = screenAddress;
@@ -185,19 +186,19 @@ namespace UssdFramework
                     return await screen.RespondAsync(this);
                 default:
                     return UssdResponse.Generate(UssdResponseTypes.Release
-                        , "Failed to generate appropriate response.");
+                        , noScreenMessage);
             }
         }
 
         private async Task ResetExpiryAsync()
         {
-            await Redis.KeyExpireAsync(Mobile, TimeSpan.FromSeconds(180));
+            await Redis.KeyExpireAsync(Mobile, TimeSpan.FromSeconds(120));
         }
 
         private async Task ResetInputExpiryAsync()
         {
-            await Redis.KeyExpireAsync(InputMetaHash, TimeSpan.FromSeconds(60));
-            await Redis.KeyExpireAsync(InputDataHash, TimeSpan.FromSeconds(60)); 
+            await Redis.KeyExpireAsync(InputMetaHash, TimeSpan.FromSeconds(90));
+            await Redis.KeyExpireAsync(InputDataHash, TimeSpan.FromSeconds(90)); 
         }
 
         private async Task ResetInputAsync(UssdScreen screen)
