@@ -5,7 +5,7 @@ A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.c
 ## Features
 
 * Automated USSD session management.
-* Automated USSD screen management.
+* Automated USSD screen navigation.
 * Automagically resume timed out USSD sessions.
 * Automagically collect user input for specific actions.
 * Fully asynchronous.
