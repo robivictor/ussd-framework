@@ -24,6 +24,76 @@ Open Package Manager Console and install `UssdFramework` from [NuGet](http://nug
 PM> Install-Package UssdFramework
 ```
 
+
+## Prepare main menu's USSD Screen
+
+In `Models` folder, add `ScreenResponses` folder. `ScreenResponses` will contain all the responses for the various screens.
+
+Create 3 classes in `ScreenResponses`; `Menus.cs`, `Inputs.cs` and `Notices.cs`.
+
+In `Models\ScreenResponses\Menus.cs` add a static method that will provide the main menu's response;
+
+```c#
+using System;
+using System.Threading.Tasks;
+using UssdFramework;
+
+namespace UssdDemo.Models.ScreenResponses
+{
+    public class Menus
+    {
+        public static async Task<UssdResponse> MainMenu(Session session)
+        {
+            return UssdResponse.Menu(
+                "Welcome to the Demo App." + Environment.NewLine
+                  + "1. Just greet me" + Environment.NewLine
+                  + "2. Greet me with my name" + Environment.NewLine
+                  + "3. Another menu");
+        }
+    }
+}
+```
+
+Note the signature of the method. All responses follow this pattern. The method is a static, asynchronous method which returns a `Task<UssdResponse>`.
+
+The `Session` object is also available at runtime and contains all information about the session, including request data.
+
+Now we need to setup our screens' meta data to allow our session to know how to process each screen. To do that we create a dictionary store of the type `Dictionary<string, UssdScreen>`.
+
+Create a `Screens.cs` class in `Models` folder that looks like the following;
+
+```c#
+using System.Collections.Generic;
+using UssdFramework;
+
+namespace UssdDemo.Models
+{
+    public class Screens
+    {
+        public static Dictionary<string, UssdScreen> All = new Dictionary<string, UssdScreen>();
+
+        static Screens()
+        {
+            All.Add("1", new UssdScreen()
+            {
+                Title = "Main menu",
+                Type = UssdScreenTypes.Menu,
+                RespondAsync = ScreenResponses.Menus.MainMenu,
+            });
+        }
+    }
+}
+```
+
+In the static initializer we add an entry to the dictionary that represents the main menu's screen. The _key_ is a `string` representing the screen's address and the _value_ is a `UssdScreen` object with the following properties:
+* __Title__
+* __Type__: Enum of `UssdScreenTypes.Menu`, `UssdScreenTypes.Input` or `UssdScreenTypes.Notice`
+* __RespondAsync__: Delegate method to a screen response.
+
+There are 2 other properties that need to be set when the screen is of type `UssdScreenTypes.Input`:
+* __Inputs__: A list of input names as strings.
+* __InputProcessorAsync__: Delegate method to an input processor.
+
 ## Add Default controller
 
 * Right-click `Controllers` folder and select __Add>Controller__. 
@@ -64,80 +134,9 @@ namespace UssdDemo
 ```
 
 
-## Prepare main menu USSD Screen
-
-In `Models` folder, add `ScreenResponses` folder. `ScreenResponses` will contain all the responses for the various screens.
-
-Create 3 classes in `ScreenResponses`; `Menus.cs`, `Inputs.cs` and `Notices.cs`.
-
-In `Models\ScreenResponses\Menus.cs` add a static method that will provide the main menu's response;
-
-```c#
-using System;
-using System.Threading.Tasks;
-using UssdFramework;
-
-namespace UssdDemo.Models.ScreenResponses
-{
-    public class Menus
-    {
-        public static async Task<UssdResponse> MainMenu(Session session)
-        {
-            return UssdResponse.Menu(
-                "Welcome to the Demo App." + Environment.NewLine
-                  + "1. Just greet me" + Environment.NewLine
-                  + "2. Greet me with my name" + Environment.NewLine
-                  + "3. Another menu");
-        }
-    }
-}
-```
-
-Note the signature of the method. All responses follow this pattern. 
-
-The `session` object is also available at runtime and contains all information about the session including request data.
-
-
-Now we need to setup our screens' meta data to allow our session to know how to process each screen. To do that we create a dictionary store of the type `Dictionary<string, UssdScreen>`.
-
-Create a `Screens.cs` class in `Models` folder that looks like the following;
-
-```c#
-using System.Collections.Generic;
-using UssdFramework;
-
-namespace UssdDemo.Models
-{
-    public class Screens
-    {
-        public static Dictionary<string, UssdScreen> All = new Dictionary<string, UssdScreen>();
-
-        static Screens()
-        {
-            All.Add("1", new UssdScreen()
-            {
-                Title = "Main menu",
-                Type = UssdScreenTypes.Menu,
-                RespondAsync = ScreenResponses.Menus.MainMenu,
-            });
-        }
-    }
-}
-```
-
-In the static initializer we add an entry to the dictionary that represents the main menu's screen. The _key_ is a `string` representing the screen's address and the _value_ is a `UssdScreen` object with the following properties:
-* __Title__
-* __Type__: Enum of `UssdScreenTypes.Menu`, `UssdScreenTypes.Input` or `UssdScreen.Notice`
-* __RespondAsync__: Delegate method to a screen response.
-
-There are 2 other properties that need to be set when the screen is of type `UssdScreenTypes.Input`:
-* __Inputs__: A list of input names as strings.
-* __InputProcessorAsync__: Delegate method to an input processor.
-
-
 ## Setup the controller
 
-Now to start receiving requests we just have to setup a controller action.
+Now to start receiving requests we just have to setup a controller action. Update `Controllers\DefaultController`:
 
 ```c#
 using System.Threading.Tasks;
@@ -149,6 +148,7 @@ namespace UssdDemo.Controllers
 {
     public class DefaultController : ApiController
     {
+        // setup session
         private readonly Setup _setup = new Setup("DemoApp", "localhost", Screens.All);
 
         [HttpPost]
@@ -172,8 +172,7 @@ namespace UssdDemo.Controllers
                     await session.TimeoutAsync();
                     break;
                 default:
-                    return Ok(UssdResponse.Generate(UssdResponseTypes.Release
-                        , "Failed to setup session. Check the Type parameter of USSD request."));
+                    return Ok(UssdResponse.Release("Failed to setup session. Check the Type parameter of USSD request."));
             }
             return Ok(await session.RespondAsync());
         }  
@@ -181,4 +180,56 @@ namespace UssdDemo.Controllers
 }
 ```
 
-We create a private instance of `UssdFramework.Setup` that we pass to `UssdFramework.Session` along with the `UssdRequest` object.
+We create a private instance of `Setup` that we pass to `Session` along with the `UssdRequest` object.
+
+`Setup` accepts 3 parameters:
+* App/Client's name.
+* Redis store's address. Uses [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) under the hood.
+* Dictionary of `UssdScreen`s.
+
+The switch statement is used to setup the session based on the type of request. Since most clients will use this boilerplate there is a helper method to clean things up. However, if you want to perform some logical steps before initializing a session you might have to modify the `Initiation` case appropriately.
+
+`Controllers\DefaultController` should now look like this:
+
+```c#
+using System.Threading.Tasks;
+using System.Web.Http;
+using UssdDemo.Models;
+using UssdFramework;
+
+namespace UssdDemo.Controllers
+{
+    public class DefaultController : ApiController
+    {
+        private readonly Setup _setup = new Setup("DemoApp", "localhost", Screens.All);
+        [HttpPost]
+        public async Task<IHttpActionResult> Index(UssdRequest ussdRequest)
+        {
+            var session = new Session(_setup, ussdRequest);
+            return Ok(await session.AutoSetupAsync("1"));
+        }  
+    }
+}
+```
+
+## Set app to use local IIS
+
+Under the project's properties we can setup our client to use the local version of IIS as shown below.
+
+<img src="img/tutorial/3.PNG">
+
+Build the project.
+
+## Simulate session with USSD Mocker
+
+To simulate a USSD session we can use [USSD Mocker](http://github.com/smsgh/ussd-mocker).
+
+<img src="img/tutorial/4.PNG">
+
+You should get a view like the following.
+
+<img src="img/tutorial/5.PNG">
+
+We cannot navigate to other screens because they don't exist yet, but now we know our menu is showing.
+
+Now let us add the first sub-screen.

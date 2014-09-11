@@ -5,14 +5,14 @@ A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.c
 ## Features
 
 * Automated USSD session management.
-* Automated USSD screen navigation.
+* Automated USSD screen navigation. All sub-menus can go back to a previous screen when a user input's `0`
 * Automagically resume timed out USSD sessions.
 * Automagically collect user input for specific actions.
 * Fully asynchronous.
 
 ## Dependencies
 
-* [Redis](https://github.com/MSOpenTech/redis)
+* [Redis](https://github.com/MSOpenTech/redis): This is used to keep session state. It is self-managed by the framework.
 
 ## Installation
 
@@ -67,5 +67,5 @@ Screen flow diagram:
 
 ## Documentation
 
-* __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md). __Note__: Incomplete.
+* __Tutorial__: A step-by-step tutorial recreating the demo app can be found [here](docs/tutorial.md).
 * __API__: Open `UssdFramework.ApiDocs\Help\index.html` in a browser to view API documentation. Documentation is generated using [Sandcastle](http://shfb.codeplex.com).
