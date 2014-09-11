@@ -187,9 +187,9 @@ We create a private instance of `Setup` that we pass to `Session` along with the
 * Redis store's address. Uses [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) under the hood.
 * Dictionary of `UssdScreen`s.
 
-The switch statement is used to setup the session based on the type of request. Since most clients will use this boilerplate there is a helper method to clean things up. However, if you want to perform some logical steps before initializing a session you might have to modify the `Initiation` case appropriately.
+The switch statement is used to setup the session based on the type of request. Since most clients will use this boilerplate there is a helper method to clean things up. However, if you want to perform some logical steps before initializing a session you will have to modify the `Initiation` case appropriately.
 
-`Controllers\DefaultController` should now look like this:
+`Controllers\DefaultController.cs` should now look like this:
 
 ```c#
 using System.Threading.Tasks;
@@ -212,7 +212,7 @@ namespace UssdDemo.Controllers
 }
 ```
 
-## Set app to use local IIS
+## Setup client to use local IIS
 
 Under the project's properties we can setup our client to use the local version of IIS as shown below.
 
@@ -230,6 +230,6 @@ You should get a view like the following.
 
 <img src="img/tutorial/5.PNG">
 
-We cannot navigate to other screens because they don't exist yet, but now we know our menu is showing.
+We can't navigate to other screens, because they don't exist yet, but now we know our menu displays as expected.
 
 Now let us add the first sub-screen.
