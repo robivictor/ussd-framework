@@ -230,6 +230,6 @@ You should get a view like the following.
 
 <img src="img/tutorial/5.PNG">
 
-We can't navigate to other screens, because they don't exist yet, but now we know our menu displays as expected.
+We can't navigate to other screens, because they don't exist yet. However, we know our menu displays as expected.
 
 Now let us add the first sub-screen.
