@@ -7,6 +7,7 @@
     <HelpKINode Title="UssdResponse.ClientState Property " Url="html/ad62534c-86da-926d-3174-1ca5f3e41100.htm" />
   </HelpKINode>
   <HelpKINode Title="ContinueAsync method" Url="html/b9fdd319-6f80-ad0f-8ca5-bb3ec0bde169.htm" />
+  <HelpKINode Title="DeleteInput method" Url="html/bfdcc431-c39d-eb9c-36d7-7a72a8a4e086.htm" />
   <HelpKINode Title="EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
   <HelpKINode Title="ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
   <HelpKINode Title="ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
@@ -43,6 +44,7 @@
     <HelpKINode Title="UssdResponseTypes Enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
   </HelpKINode>
   <HelpKINode Title="Release method" Url="html/43723263-c8aa-5907-8c26-60dbf6c52fa1.htm" />
+  <HelpKINode Title="ResetInputAsync method" Url="html/7d8c47e7-2f87-4472-3151-6c6847b20c30.htm" />
   <HelpKINode Title="RespondAsync method" Url="html/6c8e595e-f930-df88-dae3-0ded4b1ff838.htm" />
   <HelpKINode Title="RespondAsync property" Url="html/0ffd2581-266a-76e6-c7ab-62b130c904ea.htm" />
   <HelpKINode Title="Response enumeration member">
@@ -65,6 +67,7 @@
   <HelpKINode Title="Session.AppName property" Url="html/e668b326-5c28-6eb5-0a40-03f0488efc86.htm" />
   <HelpKINode Title="Session.AutoSetupAsync method" Url="html/248cca49-ab35-361b-f4b9-0175aa5796d4.htm" />
   <HelpKINode Title="Session.ContinueAsync method" Url="html/b9fdd319-6f80-ad0f-8ca5-bb3ec0bde169.htm" />
+  <HelpKINode Title="Session.DeleteInput method" Url="html/bfdcc431-c39d-eb9c-36d7-7a72a8a4e086.htm" />
   <HelpKINode Title="Session.EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
   <HelpKINode Title="Session.ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
   <HelpKINode Title="Session.ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
@@ -72,6 +75,7 @@
   <HelpKINode Title="Session.InputMetaHash property" Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
   <HelpKINode Title="Session.Mobile property" Url="html/0b1e03d6-5a0b-6864-ae9c-f3b09edbb7ec.htm" />
   <HelpKINode Title="Session.Redis field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
+  <HelpKINode Title="Session.ResetInputAsync method" Url="html/7d8c47e7-2f87-4472-3151-6c6847b20c30.htm" />
   <HelpKINode Title="Session.RespondAsync method" Url="html/6c8e595e-f930-df88-dae3-0ded4b1ff838.htm" />
   <HelpKINode Title="Session.ResumeAsync method" Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
   <HelpKINode Title="Session.Screen property" Url="html/79765c82-406d-d638-992d-ab8d5b9bbbc8.htm" />

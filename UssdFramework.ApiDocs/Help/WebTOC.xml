@@ -1,27 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="228b72ab-4787-470e-87ab-6506fb7219f5" Title="UssdFramework" Url="html/fbb4ec97-f236-796b-25a3-0b4cb0b9000f.htm">
-    <HelpTOCNode Id="fb95e86f-9f3d-4933-b0e5-6c445481ebde" Title="Session Class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm">
+  <HelpTOCNode Id="384246c1-5400-4491-9b7c-24b379b5acc3" Title="UssdFramework" Url="html/fbb4ec97-f236-796b-25a3-0b4cb0b9000f.htm">
+    <HelpTOCNode Id="e5ffcb58-a473-4713-bf9d-203a5cd761f6" Title="Session Class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm">
       <HelpTOCNode Title="Session Constructor " Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
-      <HelpTOCNode Id="37e865d2-1fa8-4683-a98a-854c80cb4bd0" Title="Session Fields" Url="html/9fd7bd47-f497-8abd-72ff-486786c632ad.htm">
+      <HelpTOCNode Id="bf3d744b-8ee3-4667-bd15-a3871abe8160" Title="Session Fields" Url="html/9fd7bd47-f497-8abd-72ff-486786c632ad.htm">
         <HelpTOCNode Title="Redis Field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9522265c-6d03-4f22-bf4f-3369a202229e" Title="Session Methods" Url="html/5bdedde2-2d45-c80f-65af-4a49359b6499.htm">
-        <HelpTOCNode Id="f5f0ea09-b08f-4dc4-961c-3c831882df0f" Title="AutoSetupAsync Method " Url="html/248cca49-ab35-361b-f4b9-0175aa5796d4.htm">
+      <HelpTOCNode Id="db60182c-11cb-4ecc-98ca-71fd1acfb75f" Title="Session Methods" Url="html/5bdedde2-2d45-c80f-65af-4a49359b6499.htm">
+        <HelpTOCNode Id="117566d2-fd04-4f0f-a940-4a5c056d9833" Title="AutoSetupAsync Method " Url="html/248cca49-ab35-361b-f4b9-0175aa5796d4.htm">
           <HelpTOCNode Title="AutoSetupAsync Method " Url="html/8a28d018-779a-e09b-581e-75c342463396.htm" />
           <HelpTOCNode Title="AutoSetupAsync Method (String)" Url="html/417eec20-e24d-9de8-b043-80025f3fe34a.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ContinueAsync Method " Url="html/b9fdd319-6f80-ad0f-8ca5-bb3ec0bde169.htm" />
+        <HelpTOCNode Title="DeleteInput Method " Url="html/bfdcc431-c39d-eb9c-36d7-7a72a8a4e086.htm" />
         <HelpTOCNode Title="EndAsync Method " Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
         <HelpTOCNode Title="ExistsAndTimedOutAsync Method " Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
         <HelpTOCNode Title="ExistsAsync Method " Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
+        <HelpTOCNode Title="ResetInputAsync Method " Url="html/7d8c47e7-2f87-4472-3151-6c6847b20c30.htm" />
         <HelpTOCNode Title="RespondAsync Method " Url="html/6c8e595e-f930-df88-dae3-0ded4b1ff838.htm" />
         <HelpTOCNode Title="ResumeAsync Method " Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
         <HelpTOCNode Title="StartAsync Method " Url="html/e5625f9c-818c-a4ce-fe2f-9aaff38a7f4f.htm" />
         <HelpTOCNode Title="TimeoutAsync Method " Url="html/4a4d58b4-0995-94c6-b86a-cce1198061bf.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="cc975926-6f0b-47f5-9e76-cea34cf99d8d" Title="Session Properties" Url="html/36721b82-bd3b-bbfd-b637-e319f3fa5885.htm">
+      <HelpTOCNode Id="41e69896-679a-41c1-ae85-7cafad562398" Title="Session Properties" Url="html/36721b82-bd3b-bbfd-b637-e319f3fa5885.htm">
         <HelpTOCNode Title="AppName Property " Url="html/e668b326-5c28-6eb5-0a40-03f0488efc86.htm" />
         <HelpTOCNode Title="InputDataHash Property " Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
         <HelpTOCNode Title="InputMetaHash Property " Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
@@ -32,19 +34,19 @@
         <HelpTOCNode Title="UssdScreens Property " Url="html/998dfd83-d7ff-f825-275e-d9f8d06d4ac4.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="c0c417ba-edec-4e56-8d55-63bc7b1ea013" Title="Setup Class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm">
+    <HelpTOCNode Id="31205ca6-373f-4d2f-8aeb-7d86aed85327" Title="Setup Class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm">
       <HelpTOCNode Title="Setup Constructor " Url="html/0baeaadf-6ac8-6873-4a51-1433fa2c3617.htm" />
       <HelpTOCNode Title="Setup Methods" Url="html/4452183f-3ce3-99b3-aab7-9d760dd54739.htm" />
-      <HelpTOCNode Id="d6a507c2-d534-4f92-81a9-f315497ef75c" Title="Setup Properties" Url="html/b569b0c7-c216-6481-078b-73578fb95dad.htm">
+      <HelpTOCNode Id="2e6b2e02-6b1d-42f0-a228-2ef8cf376625" Title="Setup Properties" Url="html/b569b0c7-c216-6481-078b-73578fb95dad.htm">
         <HelpTOCNode Title="Name Property " Url="html/e6227c00-7d56-d800-29f6-ba0b3ca6e3a6.htm" />
         <HelpTOCNode Title="Redis Property " Url="html/0542c85b-b87b-e537-dc2d-2b4c8aae5cf8.htm" />
         <HelpTOCNode Title="UssdScreens Property " Url="html/ed20467e-653b-0a76-3990-b0120b5d9218.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="67552e07-3bc6-4a3c-88b0-42679f4d7cf6" Title="UssdRequest Class" Url="html/9df8da64-1002-a4ed-4deb-72423af2e02b.htm">
+    <HelpTOCNode Id="d4bd51f9-062c-4a87-b804-3fcb27c47109" Title="UssdRequest Class" Url="html/9df8da64-1002-a4ed-4deb-72423af2e02b.htm">
       <HelpTOCNode Title="UssdRequest Constructor " Url="html/c7db9446-3402-e561-0817-8fa80acc9ef7.htm" />
       <HelpTOCNode Title="UssdRequest Methods" Url="html/978044e1-75d1-e757-b98d-d4c0ec41d1e0.htm" />
-      <HelpTOCNode Id="4b6c51b4-ace3-47de-9ef4-495ca072d1f0" Title="UssdRequest Properties" Url="html/a1259898-72e9-0a58-a6fb-d0a20e0f710f.htm">
+      <HelpTOCNode Id="34617ba6-13e2-48a0-a50d-00507ffa215b" Title="UssdRequest Properties" Url="html/a1259898-72e9-0a58-a6fb-d0a20e0f710f.htm">
         <HelpTOCNode Title="ClientState Property " Url="html/f4463973-7b79-02f5-3edf-7ce2c35e7ce4.htm" />
         <HelpTOCNode Title="Message Property " Url="html/30bba018-b314-6090-83b7-ffae795ae891.htm" />
         <HelpTOCNode Title="Mobile Property " Url="html/9864e954-b457-431a-2a7c-28ff894dc3a5.htm" />
@@ -56,9 +58,9 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="UssdRequestTypes Enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
-    <HelpTOCNode Id="76d7d79a-d6b2-4abe-886c-9d4d75aaa9e1" Title="UssdResponse Class" Url="html/9837461b-48a4-a81a-e7e0-fc96041f7142.htm">
+    <HelpTOCNode Id="0f69ca57-8679-4660-9084-78b2e9731805" Title="UssdResponse Class" Url="html/9837461b-48a4-a81a-e7e0-fc96041f7142.htm">
       <HelpTOCNode Title="UssdResponse Constructor " Url="html/934b0d93-d07d-d7b2-c769-8ba16d9d2f44.htm" />
-      <HelpTOCNode Id="f1d0d1c0-7a1d-49b5-a467-3861e3cf9957" Title="UssdResponse Methods" Url="html/fe523184-a531-4abd-e18f-d1f5e4d604eb.htm">
+      <HelpTOCNode Id="d6b129af-6419-4925-b908-829a217e5635" Title="UssdResponse Methods" Url="html/fe523184-a531-4abd-e18f-d1f5e4d604eb.htm">
         <HelpTOCNode Title="Generate Method " Url="html/207c1ea7-95f8-47ea-fe11-1378ab9e9719.htm" />
         <HelpTOCNode Title="Input Method " Url="html/d8c78299-dd17-6b54-cccc-1d08c5bcfde4.htm" />
         <HelpTOCNode Title="Menu Method " Url="html/7fb26283-d948-429f-4765-2675421a22bc.htm" />
@@ -66,24 +68,24 @@
         <HelpTOCNode Title="Release Method " Url="html/43723263-c8aa-5907-8c26-60dbf6c52fa1.htm" />
         <HelpTOCNode Title="Response Method " Url="html/d652eb63-c82f-5d62-8feb-58bafd3cc544.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="51b23b93-364a-47ff-9aae-13ded122921c" Title="UssdResponse Properties" Url="html/1e43c250-504e-3432-2213-c2ef644eccd9.htm">
+      <HelpTOCNode Id="8b8cd64d-6776-4606-8cd6-9e9da5622208" Title="UssdResponse Properties" Url="html/1e43c250-504e-3432-2213-c2ef644eccd9.htm">
         <HelpTOCNode Title="ClientState Property " Url="html/ad62534c-86da-926d-3174-1ca5f3e41100.htm" />
         <HelpTOCNode Title="Message Property " Url="html/a7ec0cac-5282-271c-b430-9dc7e2c0eab5.htm" />
         <HelpTOCNode Title="Type Property " Url="html/0b7dcc57-34c9-4dd7-8772-ba6c9f6d59a2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="UssdResponseTypes Enumeration" Url="html/1a5fc5f3-0cba-6174-cc5d-3072943bf682.htm" />
-    <HelpTOCNode Id="346e7490-bb78-4b45-a4ed-e67f5ac463c1" Title="UssdScreen Class" Url="html/f461e33c-c7bf-faa0-19d0-474094a1cf12.htm">
+    <HelpTOCNode Id="157a642a-56c5-424a-a523-bd5aab4d6ca6" Title="UssdScreen Class" Url="html/f461e33c-c7bf-faa0-19d0-474094a1cf12.htm">
       <HelpTOCNode Title="UssdScreen Constructor " Url="html/a7c2bf2d-0e82-7b2d-091c-d6acb1e638cb.htm" />
-      <HelpTOCNode Id="b57c9f31-82c9-41d8-ab19-021bbf78b3ae" Title="UssdScreen Fields" Url="html/08c3d2ac-a1d1-d0aa-ad47-c00b1fa5ffd3.htm">
+      <HelpTOCNode Id="1c994b6d-5ff8-4972-9be3-0456b3e7bcb5" Title="UssdScreen Fields" Url="html/08c3d2ac-a1d1-d0aa-ad47-c00b1fa5ffd3.htm">
         <HelpTOCNode Title="InputData Field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d3c08c88-fc11-4ac5-9ffd-d1659f5941d4" Title="UssdScreen Methods" Url="html/150aa440-f372-f1fd-aa3e-c82594655c1d.htm">
+      <HelpTOCNode Id="5065607f-fafc-4cd5-8a30-5cad28d43dc0" Title="UssdScreen Methods" Url="html/150aa440-f372-f1fd-aa3e-c82594655c1d.htm">
         <HelpTOCNode Title="PrepareInputDataAsync Method " Url="html/0e5ab051-9093-404a-ebc7-05e88a5cba77.htm" />
         <HelpTOCNode Title="ReceiveInputAndRespondAsync Method " Url="html/50c04126-33a6-7acf-01ef-ab96e7c93c76.htm" />
         <HelpTOCNode Title="ReceiveInputAsync Method " Url="html/d6baa4ff-6426-773d-3874-46f1384ca2c1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="0592e210-d55a-410b-a910-8e9d1020d796" Title="UssdScreen Properties" Url="html/c13c7034-bd41-0334-9cc8-71a3d6a9634c.htm">
+      <HelpTOCNode Id="35f8b5bb-277c-454f-b78b-b314c7b4ae7c" Title="UssdScreen Properties" Url="html/c13c7034-bd41-0334-9cc8-71a3d6a9634c.htm">
         <HelpTOCNode Title="InputProcessorAsync Property " Url="html/7bba2f67-ecce-d382-bb60-1bb65c3d2d50.htm" />
         <HelpTOCNode Title="Inputs Property " Url="html/48b9c7d6-24b4-2543-9598-ef6dd12ae2ed.htm" />
         <HelpTOCNode Title="RespondAsync Property " Url="html/0ffd2581-266a-76e6-c7ab-62b130c904ea.htm" />
