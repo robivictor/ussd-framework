@@ -53,6 +53,8 @@ namespace UssdFramework
                 var value = await session.Redis.HashGetAsync(session.InputDataHash, input);
                 InputData.Add(input, value.ToString());
             }
+            await session.Redis.KeyDeleteAsync(session.InputMetaHash);
+            await session.Redis.KeyDeleteAsync(session.InputDataHash);
         }
 
         /// <summary>

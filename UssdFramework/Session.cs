@@ -284,7 +284,7 @@ namespace UssdFramework
         /// Reset input process.
         /// </summary>
         /// <param name="screen"></param>
-        private async Task ResetInputAsync(UssdScreen screen)
+        public async Task ResetInputAsync(UssdScreen screen)
         {
             await Redis.HashSetAsync(InputMetaHash, "Screen"
                                     , Screen);
