@@ -133,17 +133,16 @@ namespace UssdFramework
         /// <summary>
         /// Start a new USSD session.
         /// </summary>
-        /// <param name="screen">Screen address</param>
-        public async Task StartAsync(string screen)
+        /// <param name="screenAddress">Screen address</param>
+        public async Task StartAsync(string screenAddress)
         {
             await Redis.KeyDeleteAsync(Mobile);
-            await Redis.KeyDeleteAsync(InputDataHash);
-            await Redis.KeyDeleteAsync(InputMetaHash);
+            await DeleteInput();
             await Redis.HashSetAsync(Mobile, "Mobile", Mobile);
             await Redis.HashSetAsync(Mobile, "Status", "Active");
-            await Redis.HashSetAsync(Mobile, "Screen", screen);
+            await Redis.HashSetAsync(Mobile, "Screen", screenAddress);
             await ResetExpiryAsync();
-            Screen = screen;
+            Screen = screenAddress;
             State = UssdRequestTypes.Initiation;
         }
 
@@ -152,8 +151,7 @@ namespace UssdFramework
         /// </summary>
         public async Task ResumeAsync()
         {
-            await Redis.KeyDeleteAsync(InputDataHash);
-            await Redis.KeyDeleteAsync(InputMetaHash);
+            await DeleteInput();
             await ResetExpiryAsync();
             await Redis.HashSetAsync(Mobile, "Status", "Active");
             Screen = await Redis.HashGetAsync(Mobile, "Screen");
@@ -176,8 +174,7 @@ namespace UssdFramework
         public async Task EndAsync()
         {
             await Redis.KeyDeleteAsync(Mobile);
-            await Redis.KeyDeleteAsync(InputDataHash);
-            await Redis.KeyDeleteAsync(InputMetaHash);
+            await DeleteInput();
             State = UssdRequestTypes.Release;
         }
 
@@ -186,8 +183,7 @@ namespace UssdFramework
         /// </summary>
         public async Task TimeoutAsync()
         {
-            await Redis.KeyDeleteAsync(InputMetaHash);
-            await Redis.KeyDeleteAsync(InputDataHash);
+            await DeleteInput();
             await Redis.HashSetAsync(Mobile, "Status", "Timeout");
             await ResetExpiryAsync();
             State = UssdRequestTypes.Timeout;
@@ -254,6 +250,7 @@ namespace UssdFramework
                             }
                             await screen.ReceiveInputAsync(this, position);
                             await screen.PrepareInputDataAsync(this);
+                            await DeleteInput();
                             return await screen.InputProcessorAsync(this, screen.InputData);
                     }
                     return await screen.RespondAsync(this);
@@ -293,6 +290,15 @@ namespace UssdFramework
             await Redis.HashSetAsync(InputMetaHash, "Position"
                 , 0);
             await ResetInputExpiryAsync();
+        }
+
+        /// <summary>
+        /// Delete input data from Redis store.
+        /// </summary>
+        public async Task DeleteInput()
+        {
+            await Redis.KeyDeleteAsync(InputMetaHash);
+            await Redis.KeyDeleteAsync(InputDataHash);
         }
     }
 }

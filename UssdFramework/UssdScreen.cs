@@ -48,13 +48,12 @@ namespace UssdFramework
         /// <returns></returns>
         public async Task PrepareInputDataAsync(Session session)
         {
+            InputData.Clear();
             foreach (var input in Inputs)
             {
                 var value = await session.Redis.HashGetAsync(session.InputDataHash, input);
                 InputData.Add(input, value.ToString());
             }
-            await session.Redis.KeyDeleteAsync(session.InputMetaHash);
-            await session.Redis.KeyDeleteAsync(session.InputDataHash);
         }
 
         /// <summary>
