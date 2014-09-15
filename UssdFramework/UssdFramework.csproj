@@ -47,6 +47,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="UssdInput.cs" />
+    <Compile Include="UssdInputOptions.cs" />
     <Compile Include="UssdRequest.cs" />
     <Compile Include="UssdRequestTypes.cs" />
     <Compile Include="UssdResponse.cs" />
