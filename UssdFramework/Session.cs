@@ -228,6 +228,9 @@ namespace UssdFramework
                             screen = UssdScreens[screenAddress];
                             await Redis.HashSetAsync(Mobile, "Screen", screenAddress);
                             Screen = screenAddress;
+                            if (screen.Type == UssdScreenTypes.Input)
+                                return UssdResponse.Response(screen.Title + Environment.NewLine
+                                                            + screen.Inputs[0]);
                             break;
                         case UssdScreenTypes.Input:
                             var inputMetaExists = await Redis.KeyExistsAsync(InputMetaHash);

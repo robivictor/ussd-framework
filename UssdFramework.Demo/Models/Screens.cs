@@ -30,7 +30,6 @@ namespace UssdFramework.Demo.Models
             {
                 Title = "Enter your name",
                 Type = UssdScreenTypes.Input,
-                RespondAsync = ScreenResponses.Inputs.CustomGreeting,
                 Inputs = new List<string>()
                 {
                     "First Name",
