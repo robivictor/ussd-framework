@@ -10,8 +10,7 @@ namespace UssdFramework.Demo.Models.ScreenResponses
     {
         public static async Task<UssdResponse> CustomGreeting(Session session)
         {
-            return UssdResponse.Generate(UssdResponseTypes.Response
-                , "Enter your name" + Environment.NewLine
+            return UssdResponse.Response("Enter your name" + Environment.NewLine
                   + "First Name" + Environment.NewLine);
         }
     }

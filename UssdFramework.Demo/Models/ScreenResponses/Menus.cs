@@ -10,7 +10,7 @@ namespace UssdFramework.Demo.Models.ScreenResponses
     {
         public static async Task<UssdResponse> MainMenu(Session session)
         {
-            return UssdResponse.Menu(
+            return UssdResponse.Response(
                 "Welcome to the Demo App." + Environment.NewLine
                   + "1. Just greet me" + Environment.NewLine
                   + "2. Greet me with my name" + Environment.NewLine
@@ -19,7 +19,7 @@ namespace UssdFramework.Demo.Models.ScreenResponses
 
         public static async Task<UssdResponse> AnotherMenu(Session session)
         {
-            return UssdResponse.Menu(
+            return UssdResponse.Response(
                 "Another menu with dummy stuff. Only back works!" + Environment.NewLine
                   + "1. Nowhere" + Environment.NewLine
                   + "2. Nowhere" + Environment.NewLine

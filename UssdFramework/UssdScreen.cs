@@ -78,8 +78,8 @@ namespace UssdFramework
         public async Task<UssdResponse> ReceiveInputAndRespondAsync(Session session, int position)
         {
             await ReceiveInputAsync(session, position);
-            return UssdResponse.Generate(UssdResponseTypes.Response
-                , Title + Environment.NewLine + Inputs[++position]);
+            return UssdResponse.Response(Title + Environment.NewLine
+                + Inputs[++position]);
         }
     }
 }

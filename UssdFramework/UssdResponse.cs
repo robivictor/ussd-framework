@@ -33,7 +33,7 @@ namespace UssdFramework
         /// <param name="type"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        public static UssdResponse Generate(UssdResponseTypes type, string message)
+        private static UssdResponse Generate(UssdResponseTypes type, string message)
         {
             return new UssdResponse()
             {
@@ -60,36 +60,6 @@ namespace UssdFramework
         public static UssdResponse Release(string message)
         {
             return Generate(UssdResponseTypes.Release, message);
-        }
-
-        /// <summary>
-        /// Generate a "Response" USSD response for menu.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
-        public static UssdResponse Menu(string message)
-        {
-            return Response(message);
-        }
-
-        /// <summary>
-        /// Generate a "Response" USSD response for input.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
-        public static UssdResponse Input(string message)
-        {
-            return Response(message);
-        }
-
-        /// <summary>
-        /// Generate a "Release" USSD response for notice.
-        /// </summary>
-        /// <param name="message"></param>
-        /// <returns></returns>
-        public static UssdResponse Notice(string message)
-        {
-            return Release(message);
         }
     }
 }

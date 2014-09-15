@@ -92,8 +92,7 @@ namespace UssdFramework
                     await TimeoutAsync();
                     break;
                 default:
-                    return UssdResponse.Generate(UssdResponseTypes.Release
-                        , "Failed to setup session. Check the Type parameter of USSD request.");
+                    return UssdResponse.Release("Failed to setup session. Check the Type parameter of USSD request.");
             }
             return await RespondAsync();
         }
@@ -202,21 +201,17 @@ namespace UssdFramework
             switch (State)
             {
                 case UssdRequestTypes.Release:
-                    return UssdResponse.Generate(UssdResponseTypes.Release
-                        , String.Format("Thank you for using {0}.", AppName));
+                    return UssdResponse.Release(String.Format("Thank you for using {0}.", AppName));
                 case UssdRequestTypes.Timeout:
-                    return UssdResponse.Generate(UssdResponseTypes.Release
-                        , "Session timed out. Try again.");
+                    return UssdResponse.Release("Session timed out. Try again.");
                 case UssdRequestTypes.Initiation:
                     if (!UssdScreens.ContainsKey(Screen))
-                        return UssdResponse.Generate(UssdResponseTypes.Release
-                            , noScreenMessage);
+                        return UssdResponse.Release(noScreenMessage);
                     screen = UssdScreens[Screen];
                     return await screen.RespondAsync(this);
                 case UssdRequestTypes.Response:
                     if (!UssdScreens.ContainsKey(Screen))
-                        return UssdResponse.Generate(UssdResponseTypes.Release
-                            , noScreenMessage);
+                        return UssdResponse.Release(noScreenMessage);
                     screen = UssdScreens[Screen];
                     switch (screen.Type)
                     {
@@ -229,8 +224,7 @@ namespace UssdFramework
                                 screenList.Add(UssdRequest.Message);
                             var screenAddress = string.Join(".", screenList);
                             if (!UssdScreens.ContainsKey(screenAddress))
-                                return UssdResponse.Generate(UssdResponseTypes.Release
-                                    , noScreenMessage);
+                                return UssdResponse.Release(noScreenMessage);
                             screen = UssdScreens[screenAddress];
                             await Redis.HashSetAsync(Mobile, "Screen", screenAddress);
                             Screen = screenAddress;
@@ -255,8 +249,7 @@ namespace UssdFramework
                     }
                     return await screen.RespondAsync(this);
                 default:
-                    return UssdResponse.Generate(UssdResponseTypes.Release
-                        , noScreenMessage);
+                    return UssdResponse.Release(noScreenMessage);
             }
         }
 
