@@ -82,7 +82,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\InputProcessors.cs" />
-    <Compile Include="Models\ScreenResponses\Inputs.cs" />
     <Compile Include="Models\ScreenResponses\Menus.cs" />
     <Compile Include="Models\ScreenResponses\Notices.cs" />
     <Compile Include="Models\Screens.cs" />

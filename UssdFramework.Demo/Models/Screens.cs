@@ -12,42 +12,23 @@ namespace UssdFramework.Demo.Models
 
         static Screens()
         {
-            All.Add("1", new UssdScreen()
-            {
-                Title = "Main menu",
-                Type = UssdScreenTypes.Menu,
-                ResponseAsync = ScreenResponses.Menus.MainMenu,
-            });
+            All.Add("1", UssdScreen.Menu("Main menu", ScreenResponses.Menus.MainMenu));
 
-            All.Add("1.1",  new UssdScreen()
-            {
-                Title = "Simple Greeting",
-                Type = UssdScreenTypes.Notice,
-                ResponseAsync = ScreenResponses.Notices.SimpleGreeting,
-            });
+            All.Add("1.1", UssdScreen.Notice("Simple Greeting", ScreenResponses.Notices.SimpleGreeting));
 
-            All.Add("1.2", new UssdScreen()
-            {
-                Title = "Enter your name",
-                Type = UssdScreenTypes.Input,
-                Inputs = new List<UssdInput>()
+            All.Add("1.2", UssdScreen.Input("Your details.", InputProcessors.CustomGreeting
+                , new List<UssdInput>()
                 {
-                    new UssdInput("FirstName", "First Name"),
-                    new UssdInput("LastName", "Last Name", new List<UssdInputOption>()
+                    new UssdInput("Name"),
+                    new UssdInput("Company", new List<UssdInputOption>()
                     {
-                        new UssdInputOption("Dake"),
-                        new UssdInputOption("Kikomeko")
+                        new UssdInputOption("SMSGH"),
+                        new UssdInputOption("MPower"),
+                        new UssdInputOption("JumpFon"),
                     })
-                },
-                InputProcessorAsync = InputProcessors.CustomGreeting
-            });
+                }));
 
-            All.Add("1.3", new UssdScreen()
-            {
-                Title = "Another menu",
-                Type = UssdScreenTypes.Menu,
-                ResponseAsync = ScreenResponses.Menus.AnotherMenu
-            });
+            All.Add("1.3", UssdScreen.Menu("Another menu", ScreenResponses.Menus.AnotherMenu));
         }
     }
 }

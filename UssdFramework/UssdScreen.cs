@@ -43,6 +43,56 @@ namespace UssdFramework
             , Dictionary<string, string> data);
 
         /// <summary>
+        /// Create a menu screen.
+        /// </summary>
+        /// <param name="title">Screen title.</param>
+        /// <param name="method">Response delegate method.</param>
+        /// <returns>UssdScreen instance.</returns>
+        public static UssdScreen Menu(string title, ResponseAsyncDelegate method)
+        {
+            return new UssdScreen()
+            {
+                Title = title,
+                Type = UssdScreenTypes.Menu,
+                ResponseAsync = method,
+            };
+        }
+
+        /// <summary>
+        /// Create an input screen.
+        /// </summary>
+        /// <param name="title">Screen title.</param>
+        /// <param name="method">Input processor delegate method.</param>
+        /// <param name="inputs">List of inputs.</param>
+        /// <returns>UssdScreen instance.</returns>
+        public static UssdScreen Input(string title, InputProcessorAsyncDelegate method, List<UssdInput> inputs)
+        {
+            return new UssdScreen()
+            {
+                Title = title,
+                Type = UssdScreenTypes.Input,
+                InputProcessorAsync = method,
+                Inputs = inputs,
+            };
+        }
+
+        /// <summary>
+        /// Create a notice screen.
+        /// </summary>
+        /// <param name="title">Screen title.</param>
+        /// <param name="method">Response delegate method.</param>
+        /// <returns>UssdScreen instance.</returns>
+        public static UssdScreen Notice(string title, ResponseAsyncDelegate method)
+        {
+            return new UssdScreen()
+            {
+                Title = title,
+                Type = UssdScreenTypes.Notice,
+                ResponseAsync = method,
+            };
+        }
+
+        /// <summary>
         /// Prepare input data to be passed to <see cref="InputProcessorAsync"/>.
         /// </summary>
         /// <param name="session">Session instance.</param>
@@ -107,7 +157,7 @@ namespace UssdFramework
             message.Append(Title + Environment.NewLine);
             if (input.HasOptions)
             {
-                message.Append("Choose " + input.DisplayName + Environment.NewLine);
+                message.AppendFormat("Choose {0}:" + Environment.NewLine, input.DisplayName);
                 var options = input.Options;
                 for (var i = 0; i < options.Count; i++)
                 {
@@ -117,7 +167,7 @@ namespace UssdFramework
             }
             else
             {
-                message.Append("Enter " + input.DisplayName + Environment.NewLine);
+                message.AppendFormat("Enter {0}:" + Environment.NewLine,  input.DisplayName);
             }
             return UssdResponse.Response(message.ToString());
         }

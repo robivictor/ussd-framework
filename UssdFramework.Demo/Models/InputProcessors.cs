@@ -10,8 +10,8 @@ namespace UssdFramework.Demo.Models
     {
         public static async Task<UssdResponse> CustomGreeting(Session session, Dictionary<string, string> data)
         {
-            return UssdResponse.Release(String.Format("Hello {0} {1}!"
-                , data["FirstName"], data["LastName"]));
+            return UssdResponse.Input(String.Format("Hello {0} of {1}!"
+                , data["Name"], data["Company"]));
         }
     }
 }

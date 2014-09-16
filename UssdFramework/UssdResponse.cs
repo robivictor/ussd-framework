@@ -61,5 +61,35 @@ namespace UssdFramework
         {
             return Generate(UssdResponseTypes.Release, message);
         }
+
+        /// <summary>
+        /// Generate a suitable response for Menu screen's ResponseAsync delegate.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <returns>USSD response.</returns>
+        public static UssdResponse Menu(string message)
+        {
+            return Response(message);
+        }
+
+        /// <summary>
+        /// Generate a suitable response for Notice screen's ResponseAsync delegate.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <returns>USSD response.</returns>
+        public static UssdResponse Notice(string message)
+        {
+            return Release(message);
+        }
+
+        /// <summary>
+        /// Generate a suitable response for Input screen's InputProcessorAsync delegate.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <returns>USSD response.</returns>
+        public static UssdResponse Input(string message)
+        {
+            return Release(message);
+        }
     }
 }
