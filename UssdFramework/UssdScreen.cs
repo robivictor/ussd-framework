@@ -23,7 +23,7 @@ namespace UssdFramework
         /// <summary>
         /// List of input parameter names for this screen.
         /// </summary>
-        public List<string> Inputs { get; set; }
+        public List<UssdInput> Inputs { get; set; }
         /// <summary>
         /// Populated when all inputs have been collected and sent to InputProcessorAsync delegate method.
         /// </summary>
@@ -31,15 +31,16 @@ namespace UssdFramework
         /// <summary>
         /// Screen response delegate method.
         /// </summary>
-        public RespondAsyncDelegate RespondAsync { get; set; }
+        public ResponseAsyncDelegate ResponseAsync { get; set; }
         /// <summary>
         /// Input processor delegate method.
         /// </summary>
         public InputProcessorAsyncDelegate InputProcessorAsync { get; set; }
 
-        public delegate Task<UssdResponse> RespondAsyncDelegate(Session session);
+        public delegate Task<UssdResponse> ResponseAsyncDelegate(Session session);
 
-        public delegate Task<UssdResponse> InputProcessorAsyncDelegate(Session session, Dictionary<string, string> data);
+        public delegate Task<UssdResponse> InputProcessorAsyncDelegate(Session session
+            , Dictionary<string, string> data);
 
         /// <summary>
         /// Prepare input data to be passed to <see cref="InputProcessorAsync"/>.
@@ -51,8 +52,8 @@ namespace UssdFramework
             InputData.Clear();
             foreach (var input in Inputs)
             {
-                var value = await session.Redis.HashGetAsync(session.InputDataHash, input);
-                InputData.Add(input, value.ToString());
+                var value = await session.Redis.HashGetAsync(session.InputDataHash, input.Name);
+                InputData.Add(input.Name, value.ToString());
             }
         }
 
@@ -64,22 +65,61 @@ namespace UssdFramework
         /// <returns></returns>
         public async Task ReceiveInputAsync(Session session, int position)
         {
-            await session.Redis.HashSetAsync(session.InputDataHash, Inputs[position]
-                , session.UssdRequest.Message);
+            var input = Inputs[position];
+            var receivedMessage = session.UssdRequest.Message;
+            String value;
+            if (input.HasOptions)
+            {
+                var optionNumber = Convert.ToInt32(receivedMessage);
+                value = optionNumber < 0 || optionNumber > input.Options.Count
+                    ? receivedMessage
+                    : input.Options[optionNumber - 1].Value;
+            }
+            else
+            {
+                value = receivedMessage;
+            }
+            await session.Redis.HashSetAsync(session.InputDataHash, input.Name
+                , value);
             await session.Redis.HashSetAsync(session.InputMetaHash, "Position", ++position);
         } 
 
         /// <summary>
         /// Receive user input and send a <see cref="UssdResponse"/>.
         /// </summary>
-        /// <param name="session"></param>
-        /// <param name="position"></param>
+        /// <param name="session">Session instance</param>
+        /// <param name="position">Input's position.</param>
         /// <returns></returns>
         public async Task<UssdResponse> ReceiveInputAndRespondAsync(Session session, int position)
         {
             await ReceiveInputAsync(session, position);
-            return UssdResponse.Response(Title + Environment.NewLine
-                + Inputs[++position]);
+            return InputResponse(++position);
+        }
+
+        /// <summary>
+        /// Return appropriate response for input.
+        /// </summary>
+        /// <param name="position">Input's position.</param>
+        /// <returns></returns>
+        public UssdResponse InputResponse(int position)
+        {
+            var input = Inputs[position];
+            var message = new StringBuilder();
+            message.Append(Title + Environment.NewLine);
+            if (input.HasOptions)
+            {
+                var options = input.Options;
+                for (var i = 0; i < options.Count; i++)
+                {
+                    message.AppendFormat("{0}. {1}" + Environment.NewLine
+                        , i + 1, options[i].DisplayValue);
+                }
+            }
+            else
+            {
+                message.Append(input.DisplayName);
+            }
+            return UssdResponse.Response(message.ToString());
         }
     }
 }

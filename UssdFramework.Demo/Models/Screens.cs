@@ -16,24 +16,28 @@ namespace UssdFramework.Demo.Models
             {
                 Title = "Main menu",
                 Type = UssdScreenTypes.Menu,
-                RespondAsync = ScreenResponses.Menus.MainMenu,
+                ResponseAsync = ScreenResponses.Menus.MainMenu,
             });
 
             All.Add("1.1",  new UssdScreen()
             {
                 Title = "Simple Greeting",
                 Type = UssdScreenTypes.Notice,
-                RespondAsync = ScreenResponses.Notices.SimpleGreeting,
+                ResponseAsync = ScreenResponses.Notices.SimpleGreeting,
             });
 
             All.Add("1.2", new UssdScreen()
             {
                 Title = "Enter your name",
                 Type = UssdScreenTypes.Input,
-                Inputs = new List<string>()
+                Inputs = new List<UssdInput>()
                 {
-                    "First Name",
-                    "Last Name",
+                    new UssdInput("FirstName", "First Name"),
+                    new UssdInput("LastName", "Last Name", new List<UssdInputOption>()
+                    {
+                        new UssdInputOption("Dake"),
+                        new UssdInputOption("Kikomeko")
+                    })
                 },
                 InputProcessorAsync = InputProcessors.CustomGreeting
             });
@@ -42,7 +46,7 @@ namespace UssdFramework.Demo.Models
             {
                 Title = "Another menu",
                 Type = UssdScreenTypes.Menu,
-                RespondAsync = ScreenResponses.Menus.AnotherMenu
+                ResponseAsync = ScreenResponses.Menus.AnotherMenu
             });
         }
     }

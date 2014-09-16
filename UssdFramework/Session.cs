@@ -94,7 +94,7 @@ namespace UssdFramework
                 default:
                     return UssdResponse.Release("Failed to setup session. Check the Type parameter of USSD request.");
             }
-            return await RespondAsync();
+            return await ResponseAsync();
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace UssdFramework
         /// Send appropriate response for USSD session.
         /// </summary>
         /// <returns>USSD response</returns>
-        public async Task<UssdResponse> RespondAsync()
+        public async Task<UssdResponse> ResponseAsync()
         {
             UssdScreen screen;
             const string noScreenMessage = "Failed to get appropriate response. Please try again.";
@@ -208,7 +208,7 @@ namespace UssdFramework
                     if (!UssdScreens.ContainsKey(Screen))
                         return UssdResponse.Release(noScreenMessage);
                     screen = UssdScreens[Screen];
-                    return await screen.RespondAsync(this);
+                    return await screen.ResponseAsync(this);
                 case UssdRequestTypes.Response:
                     if (!UssdScreens.ContainsKey(Screen))
                         return UssdResponse.Release(noScreenMessage);
@@ -229,8 +229,7 @@ namespace UssdFramework
                             await Redis.HashSetAsync(Mobile, "Screen", screenAddress);
                             Screen = screenAddress;
                             if (screen.Type == UssdScreenTypes.Input)
-                                return UssdResponse.Response(screen.Title + Environment.NewLine
-                                                            + screen.Inputs[0]);
+                                return screen.InputResponse(0);
                             break;
                         case UssdScreenTypes.Input:
                             var inputMetaExists = await Redis.KeyExistsAsync(InputMetaHash);
@@ -250,7 +249,7 @@ namespace UssdFramework
                             await DeleteInput();
                             return await screen.InputProcessorAsync(this, screen.InputData);
                     }
-                    return await screen.RespondAsync(this);
+                    return await screen.ResponseAsync(this);
                 default:
                     return UssdResponse.Release(noScreenMessage);
             }

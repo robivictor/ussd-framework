@@ -19,11 +19,11 @@ namespace UssdFramework
         /// <summary>
         /// List of input's options.
         /// </summary>
-        public List<UssdInputOptions> Options { get; set; }
+        public List<UssdInputOption> Options { get; set; }
         /// <summary>
         /// Check if input has options.
         /// </summary>
-        public bool HasOptions { get { return Options.Count > 0; } }
+        public bool HasOptions { get { return !(Options == null || Options.Count == 0); } }
         
         /// <summary>
         /// Initialize with only input's name.
@@ -32,6 +32,7 @@ namespace UssdFramework
         public UssdInput(string name)
         {
             Name = name;
+            DisplayName = name;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace UssdFramework
         /// <param name="name">Input's name.</param>
         /// <param name="displayName">Input's displayed name.</param>
         /// <param name="options">List of input options.</param>
-        public UssdInput(string name, string displayName, List<UssdInputOptions> options) : this(name, displayName)
+        public UssdInput(string name, string displayName, List<UssdInputOption> options) : this(name, displayName)
         {
             Options = options;
         }
@@ -60,7 +61,7 @@ namespace UssdFramework
         /// </summary>
         /// <param name="name">Input's name.</param>
         /// <param name="options">List of input options.</param>
-        public UssdInput(string name, List<UssdInputOptions> options) : this(name)
+        public UssdInput(string name, List<UssdInputOption> options) : this(name)
         {
             Options = options;
         }
