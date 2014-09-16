@@ -75,26 +75,33 @@ namespace UssdFramework
         /// <returns>USSD response.</returns>
         public async Task<UssdResponse> AutoSetupAsync(string initialScreenAddress)
         {
-            switch (UssdRequest.Type)
+            try
             {
-                case "Initiation":
-                    var exists = await ExistsAndTimedOutAsync();
-                    if (exists) await ResumeAsync();
-                    else await StartAsync(initialScreenAddress);
-                    break;
-                case "Response":
-                    await ContinueAsync();
-                    break;
-                case "Release":
-                    await EndAsync();
-                    break;
-                case "Timeout":
-                    await TimeoutAsync();
-                    break;
-                default:
-                    return UssdResponse.Release("Failed to setup session. Check the Type parameter of USSD request.");
+                switch (UssdRequest.Type)
+                {
+                    case "Initiation":
+                        var exists = await ExistsAndTimedOutAsync();
+                        if (exists) await ResumeAsync();
+                        else await StartAsync(initialScreenAddress);
+                        break;
+                    case "Response":
+                        await ContinueAsync();
+                        break;
+                    case "Release":
+                        await EndAsync();
+                        break;
+                    case "Timeout":
+                        await TimeoutAsync();
+                        break;
+                    default:
+                        return UssdResponse.Release("Failed to setup session. Check the Type parameter of USSD request.");
+                }
+                return await ResponseAsync();
             }
-            return await ResponseAsync();
+            catch (Exception ex)
+            {
+                return UssdResponse.Release(ex.Message);
+            }
         }
 
         /// <summary>
