@@ -107,6 +107,7 @@ namespace UssdFramework
             message.Append(Title + Environment.NewLine);
             if (input.HasOptions)
             {
+                message.Append("Choose " + input.DisplayName + Environment.NewLine);
                 var options = input.Options;
                 for (var i = 0; i < options.Count; i++)
                 {
@@ -116,7 +117,7 @@ namespace UssdFramework
             }
             else
             {
-                message.Append(input.DisplayName);
+                message.Append("Enter " + input.DisplayName + Environment.NewLine);
             }
             return UssdResponse.Response(message.ToString());
         }
