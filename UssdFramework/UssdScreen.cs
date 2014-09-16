@@ -45,8 +45,7 @@ namespace UssdFramework
         /// <summary>
         /// Prepare input data to be passed to <see cref="InputProcessorAsync"/>.
         /// </summary>
-        /// <param name="session"></param>
-        /// <returns></returns>
+        /// <param name="session">Session instance.</param>
         public async Task PrepareInputDataAsync(Session session)
         {
             InputData.Clear();
@@ -60,8 +59,8 @@ namespace UssdFramework
         /// <summary>
         /// Receive user input.
         /// </summary>
-        /// <param name="session"></param>
-        /// <param name="position"></param>
+        /// <param name="session">Session instance.</param>
+        /// <param name="position">Input's position.</param>
         /// <returns></returns>
         public async Task ReceiveInputAsync(Session session, int position)
         {
