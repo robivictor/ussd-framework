@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace UssdFramework
 {
+    /// <summary>
+    /// Input parameter.
+    /// </summary>
     public class UssdInput
     {
         /// <summary>
