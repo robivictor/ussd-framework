@@ -62,10 +62,10 @@ namespace UssdFramework
         /// Create an input screen.
         /// </summary>
         /// <param name="title">Screen title.</param>
-        /// <param name="method">Input processor delegate method.</param>
         /// <param name="inputs">List of inputs.</param>
+        /// <param name="method">Input processor delegate method.</param>
         /// <returns>UssdScreen instance.</returns>
-        public static UssdScreen Input(string title, InputProcessorAsyncDelegate method, List<UssdInput> inputs)
+        public static UssdScreen Input(string title, List<UssdInput> inputs, InputProcessorAsyncDelegate method)
         {
             return new UssdScreen()
             {

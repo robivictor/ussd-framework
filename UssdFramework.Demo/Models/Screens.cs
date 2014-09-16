@@ -16,7 +16,7 @@ namespace UssdFramework.Demo.Models
 
             All.Add("1.1", UssdScreen.Notice("Simple Greeting", ScreenResponses.Notices.SimpleGreeting));
 
-            All.Add("1.2", UssdScreen.Input("Your details.", InputProcessors.CustomGreeting
+            All.Add("1.2", UssdScreen.Input("Your details."
                 , new List<UssdInput>()
                 {
                     new UssdInput("Name"),
@@ -26,7 +26,7 @@ namespace UssdFramework.Demo.Models
                         new UssdInputOption("MPower"),
                         new UssdInputOption("JumpFon"),
                     })
-                }));
+                }, InputProcessors.CustomGreeting));
 
             All.Add("1.3", UssdScreen.Menu("Another menu", ScreenResponses.Menus.AnotherMenu));
         }

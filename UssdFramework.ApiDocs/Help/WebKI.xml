@@ -18,7 +18,7 @@
   <HelpKINode Title="Input enumeration member" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
   <HelpKINode Title="Input method">
     <HelpKINode Title="UssdResponse.Input Method " Url="html/d8c78299-dd17-6b54-cccc-1d08c5bcfde4.htm" />
-    <HelpKINode Title="UssdScreen.Input Method " Url="html/7c65fcb1-b5ce-79c1-4328-e5478af9f140.htm" />
+    <HelpKINode Title="UssdScreen.Input Method " Url="html/966d6d01-897c-6051-03c9-a6e5dc3a1d6a.htm" />
   </HelpKINode>
   <HelpKINode Title="InputData field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
   <HelpKINode Title="InputDataHash property" Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
@@ -201,7 +201,7 @@
     <HelpKINode Title="methods" Url="html/150aa440-f372-f1fd-aa3e-c82594655c1d.htm" />
     <HelpKINode Title="properties" Url="html/c13c7034-bd41-0334-9cc8-71a3d6a9634c.htm" />
   </HelpKINode>
-  <HelpKINode Title="UssdScreen.Input method" Url="html/7c65fcb1-b5ce-79c1-4328-e5478af9f140.htm" />
+  <HelpKINode Title="UssdScreen.Input method" Url="html/966d6d01-897c-6051-03c9-a6e5dc3a1d6a.htm" />
   <HelpKINode Title="UssdScreen.InputData field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
   <HelpKINode Title="UssdScreen.InputProcessorAsync property" Url="html/7bba2f67-ecce-d382-bb60-1bb65c3d2d50.htm" />
   <HelpKINode Title="UssdScreen.InputProcessorAsyncDelegate delegate" Url="html/37927bfe-f40b-48e3-009c-f6a3e5815c63.htm" />
