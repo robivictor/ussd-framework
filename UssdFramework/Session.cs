@@ -215,6 +215,8 @@ namespace UssdFramework
                     if (!UssdScreens.ContainsKey(Screen))
                         return UssdResponse.Release(noScreenMessage);
                     screen = UssdScreens[Screen];
+                    if (screen.Type == UssdScreenTypes.Input)
+                        return screen.InputResponse(0);
                     return await screen.ResponseAsync(this);
                 case UssdRequestTypes.Response:
                     if (!UssdScreens.ContainsKey(Screen))
