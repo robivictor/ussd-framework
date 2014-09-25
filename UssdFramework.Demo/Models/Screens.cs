@@ -19,7 +19,8 @@ namespace UssdFramework.Demo.Models
             All.Add("1.2", UssdScreen.Input("Your details."
                 , new List<UssdInput>()
                 {
-                    new UssdInput("Name"),
+                    new UssdInput("FirstName", "First Name"),
+                    new UssdInput("LastName", "Last Name", true),
                     new UssdInput("Company", new List<UssdInputOption>()
                     {
                         new UssdInputOption("SMSGH"),

@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="StringCipher.cs" />
     <Compile Include="UssdInput.cs" />
     <Compile Include="UssdInputOption.cs" />
     <Compile Include="UssdRequest.cs" />

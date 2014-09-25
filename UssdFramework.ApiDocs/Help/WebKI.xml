@@ -10,6 +10,8 @@
   <HelpKINode Title="DeleteInput method" Url="html/bfdcc431-c39d-eb9c-36d7-7a72a8a4e086.htm" />
   <HelpKINode Title="DisplayName property" Url="html/d3c55b8e-7ea8-ca20-8323-cede3bdf3555.htm" />
   <HelpKINode Title="DisplayValue property" Url="html/42e112e2-aab7-c856-c9ba-6c68e91541d8.htm" />
+  <HelpKINode Title="Encrypt property" Url="html/355d94af-a27f-1652-59c4-0a8870d01d55.htm" />
+  <HelpKINode Title="EncryptionSalt property" Url="html/0804b760-3c82-4ec4-c495-39313b24a188.htm" />
   <HelpKINode Title="EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
   <HelpKINode Title="ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
   <HelpKINode Title="ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
@@ -21,8 +23,6 @@
     <HelpKINode Title="UssdScreen.Input Method " Url="html/966d6d01-897c-6051-03c9-a6e5dc3a1d6a.htm" />
   </HelpKINode>
   <HelpKINode Title="InputData field" Url="html/b0e63c60-300b-a9a8-6073-e45b82a3aac7.htm" />
-  <HelpKINode Title="InputDataHash property" Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
-  <HelpKINode Title="InputMetaHash property" Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
   <HelpKINode Title="InputProcessorAsync property" Url="html/7bba2f67-ecce-d382-bb60-1bb65c3d2d50.htm" />
   <HelpKINode Title="InputResponse method" Url="html/a71c511d-bc23-ed69-a388-5788d7bb9deb.htm" />
   <HelpKINode Title="Inputs property" Url="html/48b9c7d6-24b4-2543-9598-ef6dd12ae2ed.htm" />
@@ -53,7 +53,6 @@
   <HelpKINode Title="PrepareInputDataAsync method" Url="html/0e5ab051-9093-404a-ebc7-05e88a5cba77.htm" />
   <HelpKINode Title="ReceiveInputAndRespondAsync method" Url="html/50c04126-33a6-7acf-01ef-ab96e7c93c76.htm" />
   <HelpKINode Title="ReceiveInputAsync method" Url="html/d6baa4ff-6426-773d-3874-46f1384ca2c1.htm" />
-  <HelpKINode Title="Redis field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
   <HelpKINode Title="Redis property" Url="html/0542c85b-b87b-e537-dc2d-2b4c8aae5cf8.htm" />
   <HelpKINode Title="Release enumeration member">
     <HelpKINode Title="UssdRequestTypes Enumeration" Url="html/67dd5de1-1752-62f7-b9b1-624dfc474d71.htm" />
@@ -76,7 +75,6 @@
     <HelpKINode Title="Session Class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
     <HelpKINode Title="about Session class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
     <HelpKINode Title="constructor" Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
-    <HelpKINode Title="fields" Url="html/9fd7bd47-f497-8abd-72ff-486786c632ad.htm" />
     <HelpKINode Title="methods" Url="html/5bdedde2-2d45-c80f-65af-4a49359b6499.htm" />
     <HelpKINode Title="properties" Url="html/36721b82-bd3b-bbfd-b637-e319f3fa5885.htm" />
   </HelpKINode>
@@ -87,10 +85,7 @@
   <HelpKINode Title="Session.EndAsync method" Url="html/1304bce0-659f-b221-1383-a78e8a64cfbb.htm" />
   <HelpKINode Title="Session.ExistsAndTimedOutAsync method" Url="html/8f3e2d9d-4ff1-db4e-22ba-dc8d0e8d8433.htm" />
   <HelpKINode Title="Session.ExistsAsync method" Url="html/b0a23441-184e-37fa-731e-d92cfb3800ed.htm" />
-  <HelpKINode Title="Session.InputDataHash property" Url="html/7dc90254-37e0-39db-a9cc-5211bc05672e.htm" />
-  <HelpKINode Title="Session.InputMetaHash property" Url="html/d77040ab-8ecb-8151-e45e-e6cb74abbb1a.htm" />
   <HelpKINode Title="Session.Mobile property" Url="html/0b1e03d6-5a0b-6864-ae9c-f3b09edbb7ec.htm" />
-  <HelpKINode Title="Session.Redis field" Url="html/1d1e67a8-b275-ed9e-c84f-852d6a6fd2d8.htm" />
   <HelpKINode Title="Session.ResetInputAsync method" Url="html/7d8c47e7-2f87-4472-3151-6c6847b20c30.htm" />
   <HelpKINode Title="Session.ResponseAsync method" Url="html/75e5ed7b-f330-bd6d-1455-67fc28377d23.htm" />
   <HelpKINode Title="Session.ResumeAsync method" Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
@@ -100,7 +95,6 @@
   <HelpKINode Title="Session.State property" Url="html/4b953863-26cf-1968-f882-62e7ff99d5f5.htm" />
   <HelpKINode Title="Session.TimeoutAsync method" Url="html/4a4d58b4-0995-94c6-b86a-cce1198061bf.htm" />
   <HelpKINode Title="Session.UssdRequest property" Url="html/a9e5ab73-8f8d-f3aa-b933-ee0ed584f0ea.htm" />
-  <HelpKINode Title="Session.UssdScreens property" Url="html/998dfd83-d7ff-f825-275e-d9f8d06d4ac4.htm" />
   <HelpKINode Title="SessionId property" Url="html/0e10e240-8794-eef6-7ce4-05c68e67ba42.htm" />
   <HelpKINode Title="Setup class">
     <HelpKINode Title="Setup Class" Url="html/fea09dc9-c7aa-d946-e941-cdf9a4ec9045.htm" />
@@ -109,6 +103,7 @@
     <HelpKINode Title="methods" Url="html/4452183f-3ce3-99b3-aab7-9d760dd54739.htm" />
     <HelpKINode Title="properties" Url="html/b569b0c7-c216-6481-078b-73578fb95dad.htm" />
   </HelpKINode>
+  <HelpKINode Title="Setup.EncryptionSalt property" Url="html/0804b760-3c82-4ec4-c495-39313b24a188.htm" />
   <HelpKINode Title="Setup.Name property" Url="html/e6227c00-7d56-d800-29f6-ba0b3ca6e3a6.htm" />
   <HelpKINode Title="Setup.Redis property" Url="html/0542c85b-b87b-e537-dc2d-2b4c8aae5cf8.htm" />
   <HelpKINode Title="Setup.Setup constructor" Url="html/54f1dc2e-ec6e-83de-7a0e-5a6ff3bea0be.htm" />
@@ -144,6 +139,7 @@
     <HelpKINode Title="properties" Url="html/90c206b0-845b-603a-72b1-adeb4b44aa39.htm" />
   </HelpKINode>
   <HelpKINode Title="UssdInput.DisplayName property" Url="html/d3c55b8e-7ea8-ca20-8323-cede3bdf3555.htm" />
+  <HelpKINode Title="UssdInput.Encrypt property" Url="html/355d94af-a27f-1652-59c4-0a8870d01d55.htm" />
   <HelpKINode Title="UssdInput.HasOptions property" Url="html/55c47897-7f06-9b50-3bdd-69f3e038b85a.htm" />
   <HelpKINode Title="UssdInput.Name property" Url="html/5138b56f-e07c-bf80-39ab-eb3f158feb17.htm" />
   <HelpKINode Title="UssdInput.Options property" Url="html/77253acf-b7b1-8357-8c04-833e372b419a.htm" />
@@ -217,10 +213,7 @@
   <HelpKINode Title="UssdScreen.Title property" Url="html/6ef60037-4244-af2b-f5b3-420e2cf8c385.htm" />
   <HelpKINode Title="UssdScreen.Type property" Url="html/80fb7202-32f0-988c-83bf-63639610f80c.htm" />
   <HelpKINode Title="UssdScreen.UssdScreen constructor" Url="html/a7c2bf2d-0e82-7b2d-091c-d6acb1e638cb.htm" />
-  <HelpKINode Title="UssdScreens property">
-    <HelpKINode Title="Session.UssdScreens Property " Url="html/998dfd83-d7ff-f825-275e-d9f8d06d4ac4.htm" />
-    <HelpKINode Title="Setup.UssdScreens Property " Url="html/ed20467e-653b-0a76-3990-b0120b5d9218.htm" />
-  </HelpKINode>
+  <HelpKINode Title="UssdScreens property" Url="html/ed20467e-653b-0a76-3990-b0120b5d9218.htm" />
   <HelpKINode Title="UssdScreenTypes enumeration" Url="html/88191855-a3ba-b6ef-f89e-72d61a6c46fe.htm" />
   <HelpKINode Title="Value property" Url="html/2dc728f7-0cdb-4241-56f8-467646a3c2e9.htm" />
 </HelpKI>

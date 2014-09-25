@@ -102,7 +102,9 @@ namespace UssdFramework
             foreach (var input in Inputs)
             {
                 var value = await session.Redis.HashGetAsync(session.InputDataHash, input.Name);
-                InputData.Add(input.Name, value.ToString());
+                InputData.Add(input.Name, input.Encrypt 
+                    ? await StringCipher.DecryptAsync(value.ToString(), session.EncryptionSalt) 
+                    : value.ToString());
             }
         }
 
@@ -129,7 +131,7 @@ namespace UssdFramework
                 value = receivedMessage;
             }
             await session.Redis.HashSetAsync(session.InputDataHash, input.Name
-                , value);
+                , input.Encrypt ? await StringCipher.EncryptAsync(value, session.EncryptionSalt) : value);
             await session.Redis.HashSetAsync(session.InputMetaHash, "Position", ++position);
         } 
 

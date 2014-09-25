@@ -8,6 +8,7 @@ A .NET framework to ease building USSD clients on the [SMSGH](http://www.smsgh.c
 * Automated USSD screen navigation. All sub-menus can go back to a previous screen when a user input's `0`
 * Automagically resume timed out USSD sessions.
 * Automagically collect user input for specific actions.
+* Encrypt inputs.
 * Fully asynchronous.
 
 ## Dependencies

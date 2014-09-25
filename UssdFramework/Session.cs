@@ -16,39 +16,43 @@ namespace UssdFramework
         /// <summary>
         /// Application name.
         /// </summary>
-        public string AppName { get; set; }
+        public string AppName { get; private set; }
         /// <summary>
         /// Mobile number from which USSD request originated.
         /// </summary>
-        public string Mobile { get; set; }
+        public string Mobile { get; private set; }
         /// <summary>
         /// Screen address.
         /// </summary>
-        public string Screen { get; set; }
+        public string Screen { get; private set; }
         /// <summary>
         /// Session state.
         /// </summary>
-        public UssdRequestTypes State { get; set; }
+        public UssdRequestTypes State { get; private set; }
         /// <summary>
         /// Current USSD request.
         /// </summary>
-        public UssdRequest UssdRequest { get; set; }
+        public UssdRequest UssdRequest { get; private set; }
         /// <summary>
         /// Dictionary of USSD Screens
         /// </summary>
-        public Dictionary<string, UssdScreen> UssdScreens { get; set; }
+        internal Dictionary<string, UssdScreen> UssdScreens { get; private set; }
         /// <summary>
         /// Key used to store Input Meta data in Redis.
         /// </summary>
-        public string InputMetaHash { get { return Mobile + PostfixInputMeta; } }
+        internal string InputMetaHash { get { return Mobile + PostfixInputMeta; } }
         /// <summary>
         /// Key used to store Input Data in Redis.
         /// </summary>
-        public string InputDataHash { get { return Mobile + PostfixInputData; } }
+        internal string InputDataHash { get { return Mobile + PostfixInputData; } }
         /// <summary>
         /// StackExchange.Redis instance.
         /// </summary>
-        public readonly IDatabase Redis;
+        internal readonly IDatabase Redis;
+        /// <summary>
+        /// Salt used to encrypt/decrypt inputs.
+        /// </summary>
+        internal string EncryptionSalt { get; private set; }
 
         private const string PostfixInputData = "_InputData";
         private const string PostfixInputMeta = "_InputMeta";
@@ -65,6 +69,7 @@ namespace UssdFramework
             UssdScreens = setup.UssdScreens;
             Mobile = request.Mobile;
             UssdRequest = request;
+            EncryptionSalt = setup.EncryptionSalt;
         }
 
         /// <summary>

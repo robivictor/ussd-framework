@@ -27,15 +27,19 @@ namespace UssdFramework
         /// Check if input has options.
         /// </summary>
         public bool HasOptions { get { return !(Options == null || Options.Count == 0); } }
-        
+        /// <summary>
+        /// Encrypt input flag.
+        /// </summary>
+        public bool Encrypt { get; private set; }
+     
+
         /// <summary>
         /// Initialize with only input's name.
         /// </summary>
         /// <param name="name">Input's name.</param>
         public UssdInput(string name)
+            : this(name, name, false)
         {
-            Name = name;
-            DisplayName = name;
         }
 
         /// <summary>
@@ -43,9 +47,43 @@ namespace UssdFramework
         /// </summary>
         /// <param name="name">Input's name.</param>
         /// <param name="displayName">Input's displayed name.</param>
-        public UssdInput(string name, string displayName) : this(name)
+        public UssdInput(string name, string displayName) 
+            : this(name, displayName, false)
         {
+        }
+
+        /// <summary>
+        /// Initialize encrypted input.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="encrypt"></param>
+        public UssdInput(string name, bool encrypt)
+            : this(name, name, encrypt)
+        {
+        }
+
+        /// <summary>
+        /// Initialize with input's name and list of options.
+        /// </summary>
+        /// <param name="name">Input's name.</param>
+        /// <param name="options">List of input options.</param>
+        public UssdInput(string name, List<UssdInputOption> options)
+            : this(name)
+        {
+            Options = options;
+        }
+
+        /// <summary>
+        /// Initialize encrypted input.
+        /// </summary>
+        /// <param name="name">Input's name.</param>
+        /// <param name="displayName">Input's displayed name.</param>
+        /// <param name="encrypt">Encryption flag.</param>
+        public UssdInput(string name, string displayName, bool encrypt)
+        {
+            Name = name;
             DisplayName = displayName;
+            Encrypt = encrypt;
         }
 
         /// <summary>
@@ -54,17 +92,8 @@ namespace UssdFramework
         /// <param name="name">Input's name.</param>
         /// <param name="displayName">Input's displayed name.</param>
         /// <param name="options">List of input options.</param>
-        public UssdInput(string name, string displayName, List<UssdInputOption> options) : this(name, displayName)
-        {
-            Options = options;
-        }
-
-        /// <summary>
-        /// Initialize with input's name and list of options.
-        /// </summary>
-        /// <param name="name">Input's name.</param>
-        /// <param name="options">List of input options.</param>
-        public UssdInput(string name, List<UssdInputOption> options) : this(name)
+        public UssdInput(string name, string displayName, List<UssdInputOption> options) 
+            : this(name, displayName)
         {
             Options = options;
         }
