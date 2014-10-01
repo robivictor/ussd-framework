@@ -74,7 +74,7 @@
   <HelpKINode Title="Session class">
     <HelpKINode Title="Session Class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
     <HelpKINode Title="about Session class" Url="html/b082e04c-cc36-2e03-6d18-550940a5efc3.htm" />
-    <HelpKINode Title="constructor" Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
+    <HelpKINode Title="constructor" Url="html/1eaab837-6527-4ad1-b230-b2129c252587.htm" />
     <HelpKINode Title="methods" Url="html/5bdedde2-2d45-c80f-65af-4a49359b6499.htm" />
     <HelpKINode Title="properties" Url="html/36721b82-bd3b-bbfd-b637-e319f3fa5885.htm" />
   </HelpKINode>
@@ -90,7 +90,7 @@
   <HelpKINode Title="Session.ResponseAsync method" Url="html/75e5ed7b-f330-bd6d-1455-67fc28377d23.htm" />
   <HelpKINode Title="Session.ResumeAsync method" Url="html/dab7cb7f-f53b-10ee-a6fc-122b41d2f896.htm" />
   <HelpKINode Title="Session.Screen property" Url="html/79765c82-406d-d638-992d-ab8d5b9bbbc8.htm" />
-  <HelpKINode Title="Session.Session constructor" Url="html/06e9ea11-beec-ae04-2ff6-78d8674290e6.htm" />
+  <HelpKINode Title="Session.Session constructor" Url="html/1eaab837-6527-4ad1-b230-b2129c252587.htm" />
   <HelpKINode Title="Session.StartAsync method" Url="html/e5625f9c-818c-a4ce-fe2f-9aaff38a7f4f.htm" />
   <HelpKINode Title="Session.State property" Url="html/4b953863-26cf-1968-f882-62e7ff99d5f5.htm" />
   <HelpKINode Title="Session.TimeoutAsync method" Url="html/4a4d58b4-0995-94c6-b86a-cce1198061bf.htm" />

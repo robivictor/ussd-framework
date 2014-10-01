@@ -38,7 +38,7 @@ namespace UssdFramework
             return new UssdResponse()
             {
                 Type = type.ToString(),
-                Message = message
+                Message = message.Length > 160 ? message.Substring(0, 160) : message,
             };
         }
 

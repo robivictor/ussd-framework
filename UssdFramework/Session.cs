@@ -62,7 +62,7 @@ namespace UssdFramework
         /// </summary>
         /// <param name="setup">Setup</param>
         /// <param name="request">USSD request</param>
-        public Session(Setup setup, UssdRequest request)
+        public Session(ref Setup setup, ref UssdRequest request)
         {
             AppName = setup.Name;
             Redis = setup.Redis;
