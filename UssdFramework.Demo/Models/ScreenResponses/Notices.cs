@@ -10,7 +10,7 @@ namespace UssdFramework.Demo.Models.ScreenResponses
     {
         public static async Task<UssdResponse> SimpleGreeting(Session session)
         {
-            return UssdResponse.Notice("Hello Boss!");
+            return await Task.FromResult(UssdResponse.Notice("Hello Boss!"));
         }
     }
 }
