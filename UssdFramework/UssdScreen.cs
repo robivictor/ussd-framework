@@ -122,9 +122,17 @@ namespace UssdFramework
             if (input.HasOptions)
             {
                 var optionNumber = Convert.ToInt32(receivedMessage);
-                value = optionNumber < 0 || optionNumber > input.Options.Count
-                    ? receivedMessage
-                    : input.Options[optionNumber - 1].Value;
+                //value = optionNumber < 0 || optionNumber > input.Options.Count
+                //    ? receivedMessage
+                //    : input.Options[optionNumber - 1].Value;
+                try
+                {
+                    value = input.Options[optionNumber - 1].Value;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Sorry, selected option does not exist. Try again.");
+                }
             }
             else
             {
